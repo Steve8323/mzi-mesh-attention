@@ -1,0 +1,10 @@
+solved bumps: {1: [31.93], 2: [30.81]}
+path deltas (um): [0.0, 30.08, 60.17] target: [0, 30.08, 60.17]
+  ch1: bump A=31.9 um, min bend radius ~7.8 um
+  ch2: bump A=30.8 um, min bend radius ~8.1 um
+head 18.0
+polys 8 18.0
+optics 125554
+electrodes 8338 79
+
+Elapsed run time = 14.9667 s

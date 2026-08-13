@@ -78,6 +78,8 @@ def chunked_strips(xs, ys, width, nmax=3000, seg_um=75.0):
         nseg = min(nmax, max(int(seg_um / max(step, 1e-6)), 50))
         j = min(i + nseg, len(xs))
         out.append(strip_polygon(xs[i:j], ys[i:j], width))
+        if j >= len(xs):
+            break                      # final chunk: don't loop forever
         i = j - 2                      # 2-sample overlap
     return out
 

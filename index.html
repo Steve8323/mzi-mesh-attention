@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>MZI-MRR chip — everything</title>
+<style>body{font-family:-apple-system,Helvetica;max-width:980px;margin:30px auto;
+color:#1a1a2e;line-height:1.5}h1{font-size:22px}h2{font-size:16px;border-bottom:2px solid #0072B2;padding-bottom:3px}
+.n{color:#8a8a97;font-size:12px} li{margin:3px 0} .miss{color:#D55E00}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}</style></head><body>
+<h1>Pulse-train MZI mesh + MRR chip — all deliverables</h1>
+<p class='n'>Repo: Steve8323/mzi-mesh-attention · 2026-08-13 14:06</p>
+<div class='grid'><div>
+<h2>Interactive / reports</h2><ul>
+<li><a href='gds_viewer.html' target='_blank'>GDS design viewer</a> <span class='n'>exact polygons, both layers, zoomable</span></li>
+<li><a href='report.html' target='_blank'>Main report</a> <span class='n'>§1–10: attention analysis → optimization → amplitude metrics</span></li>
+<li><a href='snapshots.html' target='_blank'>MEEP gallery</a> <span class='n'>geometry + field amplitudes, all scenes</span></li>
+</ul>
+<h2>Print files (fabrication)</h2><ul>
+<li><a href='out/mask_optics.gds' download>mask_optics.gds</a> <span class='n'>(122 kB) — vector, layer 1, µm/1nm</span></li>
+<li><a href='out/mask_electrodes.gds' download>mask_electrodes.gds</a> <span class='n'>(8 kB) — vector, layer 2</span></li>
+<li><a href='out/litho_optics_bw.png' download>litho_optics_bw.png</a> <span class='n'>(163 kB) — 1-bit 50 nm/px, WHITE=SiO₂, = exact MEEP grid</span></li>
+<li><a href='out/litho_electrodes_bw.png' download>litho_electrodes_bw.png</a> <span class='n'>(206 kB) — 1-bit 50 nm/px, WHITE=metal, planar-verified</span></li>
+<li><a href='out/litho_optics_50nmpx.json' download>optics scale sidecar</a> <span class='n'>(0 kB)</span></li>
+<li><a href='out/mask_electrodes_scale.json' download>electrode scale sidecar</a> <span class='n'>(0 kB)</span></li>
+<li><a href='out/electrode_verify.json' download>electrode planarity verification</a> <span class='n'>(2 kB) — PASS</span></li>
+</ul>
+<h2>Docs</h2><ul>
+<li><a href='BUILD.md' target='_blank'>BUILD.md</a> <span class='n'>how to make it: 2 layers, 4 masks, tolerances</span></li>
+<li><a href='MASKS_PRINT.md' target='_blank'>MASKS_PRINT.md</a> <span class='n'>print conventions</span></li>
+<li><a href='ELECTRODES.md' target='_blank'>ELECTRODES.md</a> <span class='n'>netlist + planarity proof</span></li>
+<li><a href='ANALYSIS.md' target='_blank'>ANALYSIS.md</a> <span class='n'>the attention question</span></li>
+<li><a href='OPTIMIZATION.md' target='_blank'>OPTIMIZATION.md</a> <span class='n'>4 loops + critic verdicts + residual risks</span></li>
+<li><a href='FTIR_GATE.md' target='_blank'>FTIR_GATE.md</a> <span class='n'>intensity gate (if present)</span></li>
+<li><a href='README.md' target='_blank'>README.md</a> <span class='n'>everything, headline table</span></li>
+</ul></div><div>
+<h2>Field amplitudes (MEEP)</h2><ul>
+<li><a href='fig/snap_e2e_mrr_frames.png' download>end-to-end + MRR |Ez| frames</a> <span class='n'>(1877 kB)</span></li>
+<li><a href='fig/snap_e2e_mrr_eps.png' download>end-to-end + MRR geometry (ε)</a> <span class='n'>(51 kB)</span></li>
+<li><a href='fig/snap_mesh_frames.png' download>5×5 mesh cascade |Ez|</a> <span class='n'>(1215 kB)</span></li>
+<li><a href='fig/snap_node_cross.png' download>node cross state |Ez|</a> <span class='n'>(269 kB)</span></li>
+<li><a href='fig/snap_node_half.png' download>node geometric θ=π/2 |Ez|</a> <span class='n'>(284 kB)</span></li>
+<li><a href='fig/snap_score_frames.png' download>score head interference |Ez|</a> <span class='n'>(319 kB)</span></li>
+<li><a href='fig/snap_elec_ring.png' download>token gate ON/OFF fields (13.6 dB)</a> <span class='n'>(337 kB)</span></li>
+<li><a href='fig/snap_comb.png' download>comb ignition attempt</a> <span class='n'>(298 kB)</span></li>
+<li><a href='fig/ftir_gate_knee.png' download>FTIR gate knee + claim test</a> <span class='n'>(123 kB)</span></li>
+<li><a href='fig/ftir_gate_pulse.png' download>FTIR pulse traces</a> <span class='n'>(103 kB)</span></li>
+</ul>
+<h2>Data (JSON)</h2><ul>
+<li><a href='out/density.json' download>compute density vs B300</a> <span class='n'>(1 kB)</span></li>
+<li><a href='out/opt_loop1.json' download>optimization loop 1</a> <span class='n'>(8 kB)</span></li>
+<li><a href='out/opt_loop2.json' download>loop 2</a> <span class='n'>(4 kB)</span></li>
+<li><a href='out/opt_loop3.json' download>loop 3</a> <span class='n'>(4 kB)</span></li>
+<li><a href='out/opt_loop4.json' download>loop 4 (final Pareto)</a> <span class='n'>(5 kB)</span></li>
+<li><a href='out/amp_metrics.json' download>amplitude perfection metrics</a> <span class='n'>(4 kB)</span></li>
+<li><a href='out/e2e_mrr_timing.json' download>measured delays + ring period</a> <span class='n'>(241 kB)</span></li>
+<li><a href='out/ring_design.json' download>CMT ring design sheets</a> <span class='n'>(1 kB)</span></li>
+<li><a href='out/compact_cal.json' download>compact node calibration</a> <span class='n'>(0 kB)</span></li>
+<li><a href='out/comb_ignite.json' download>comb ignition spectra</a> <span class='n'>(10 kB)</span></li>
+<li><a href='out/ftir_gate_knee.json' download>FTIR knee data</a> <span class='n'>(0 kB)</span></li>
+</ul></div></div>
+<p class='n'>All links are relative — this page works from the repo checkout or the worktree.</p>
+</body></html>
