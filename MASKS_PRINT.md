@@ -8,18 +8,18 @@ simulated MaterialGrid.
 
 ## Layer 1 — waveguides (this is mask 1 of BUILD.md)
 
-- `out/mask_optics.gds` — vector GDSII (layer 1), polygons = SiO₂ kept.
-  Centerlines sampled at 25 nm, offset ±W/2 (W = 0.991 µm); ring = 1440-
-  vertex annulus; long strips chunked ≤3000 vertices for the GDS record
-  limit (abutting, 2-sample overlap).
-- `out/mask_optics_1bit.png` — 1-bit, **50 nm/pixel exactly**
-  (20 px/µm), WHITE = guide (dark-field etch mask), with a 100 µm scale
-  bar in the bottom margin and 10 µm alignment crosses in the corners.
-  Scale/frame sidecar: `out/mask_optics_scale.json`.
-- Preview with dimensions: `fig/mask_print_preview.png`.
-- Verification: `out/mask_verify.json` — the polygons re-rasterized on
-  the MEEP grid vs the MaterialGrid the solver actually stepped;
-  mismatch must be < 2% of guide pixels (edge pixels only).
+- **PRIMARY (delivered): `out/litho_optics_bw.png`** — 1-bit, **50 nm/
+  pixel exactly** (20 px/µm), WHITE = SiO₂ kept, 100 µm scale bar +
+  corner crosses. This bitmap IS the MaterialGrid the MEEP end-to-end
+  cell stepped — pattern fidelity is by construction, no polygon
+  round-trip involved. Sidecar: `out/litho_optics_50nmpx.json`.
+  (Viewing copy at 100 nm/px: `out/litho_optics_view.png`.)
+- SECONDARY (scripted, pending): `masks_print.py` also emits vector
+  GDSII from the analytic centerlines (25 nm sampling, chunked for the
+  GDS record limit) plus a polygon-vs-grid verification; its slow
+  rasterization pass kept exceeding the session's job limits, so run it
+  offline if you want the vector file — the printable bitmap above does
+  not depend on it.
 
 Contents: input bus (left facet) → clock MRR (R = 4.788 µm, coupling gap
 0.180 µm — CMT-designed, one-shot verified) → two tap couplers (gap
