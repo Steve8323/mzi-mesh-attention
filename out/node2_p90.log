@@ -1,0 +1,66 @@
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000593901 s
+Working in 2D dimensions.
+Computational cell is 104.68 x 15 x 0 with resolution 25
+subpixel-averaging is 21.7987% done, 14.3914 s remaining
+subpixel-averaging is 43.0691% done, 5.32301 s remaining
+subpixel-averaging is 63.9432% done, 2.26924 s remaining
+subpixel-averaging is 84.0246% done, 0.763448 s remaining
+subpixel-averaging is 20.6097% done, 15.4823 s remaining
+subpixel-averaging is 39.8984% done, 6.04334 s remaining
+subpixel-averaging is 60.6404% done, 2.61235 s remaining
+subpixel-averaging is 80.7217% done, 0.956963 s remaining
+subpixel-averaging is 19.9491% done, 16.1384 s remaining
+subpixel-averaging is 39.3699% done, 6.19823 s remaining
+subpixel-averaging is 59.055% done, 2.77549 s remaining
+subpixel-averaging is 76.0977% done, 1.26007 s remaining
+subpixel-averaging is 94.3295% done, 0.240778 s remaining
+time for set_epsilon = 78.7179 s
+-----------
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+MPB solved for frequency_1(0.931628,0,0) = 0.687594 after 15 iters
+MPB solved for frequency_1(0.868968,0,0) = 0.64516 after 8 iters
+MPB solved for frequency_1(0.86897,0,0) = 0.645161 after 1 iters
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+MPB solved for frequency_1(0.931628,0,0) = 0.687594 after 15 iters
+MPB solved for frequency_1(0.868968,0,0) = 0.64516 after 8 iters
+MPB solved for frequency_1(0.86897,0,0) = 0.645161 after 1 iters
+on time step 912 (time=18.24), 0.00438963 s/step
+on time step 1832 (time=36.64), 0.00435196 s/step
+on time step 2775 (time=55.5), 0.00424529 s/step
+on time step 3776 (time=75.52), 0.00399721 s/step
+on time step 4798 (time=95.96), 0.00391777 s/step
+on time step 5789 (time=115.78), 0.00403798 s/step
+field decay(t = 120.04): 9.523632325505813e-16 / 9.523632325505813e-16 = 1.0
+on time step 6753 (time=135.06), 0.00414993 s/step
+on time step 7765 (time=155.3), 0.00395318 s/step
+on time step 8568 (time=171.36), 0.00498424 s/step
+field decay(t = 180.06): 0.0001608794708014754 / 0.0001608794708014754 = 1.0
+on time step 9523 (time=190.46), 0.00419367 s/step
+on time step 10738 (time=214.76), 0.00329298 s/step
+field decay(t = 240.08): 2.1918480454956577 / 2.1918480454956577 = 1.0
+on time step 12082 (time=241.64), 0.00297802 s/step
+on time step 13423 (time=268.46), 0.00298337 s/step
+on time step 14563 (time=291.26), 0.00351224 s/step
+field decay(t = 300.1): 1.0803082982037577 / 2.1918480454956577 = 0.4928755441892233
+on time step 15862 (time=317.24), 0.00308079 s/step
+on time step 17176 (time=343.52), 0.00304497 s/step
+field decay(t = 360.12): 5.431537311726213e-07 / 2.1918480454956577 = 2.4780628944092436e-07
+on time step 18511 (time=370.22), 0.00299642 s/step
+on time step 19667 (time=393.34), 0.00346328 s/step
+on time step 20903 (time=418.06), 0.00323707 s/step
+field decay(t = 420.14): 8.290555856505421e-07 / 2.1918480454956577 = 3.78245009892126e-07
+on time step 22016 (time=440.32), 0.00359597 s/step
+on time step 23173 (time=463.46), 0.00345825 s/step
+field decay(t = 480.16): 2.7228956451256104e-07 / 2.1918480454956577 = 1.242283036326938e-07
+on time step 24118 (time=482.36), 0.00423698 s/step
+on time step 25021 (time=500.42), 0.00443285 s/step
+on time step 25815 (time=516.3), 0.00504126 s/step
+on time step 26644 (time=532.88), 0.00482647 s/step
+field decay(t = 540.1800000000001): 9.114942786717553e-09 / 2.1918480454956577 = 4.158565100098592e-09
+run 0 finished at t = 540.1800000000001 (27009 timesteps)
+[DN0.01_a0.7_p90] at 1550:  bar meas 0.4117 pred 0.3276 | cross meas 0.5706 pred 0.6556
+
+Elapsed run time = 181.2011 s

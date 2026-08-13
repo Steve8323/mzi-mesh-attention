@@ -1,0 +1,38 @@
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000735998 s
+Working in 2D dimensions.
+Computational cell is 52.36 x 15 x 0 with resolution 25
+subpixel-averaging is 47.3936% done, 4.46277 s remaining
+subpixel-averaging is 94.5151% done, 0.23331 s remaining
+subpixel-averaging is 47.3936% done, 4.44696 s remaining
+subpixel-averaging is 93.9704% done, 0.257511 s remaining
+subpixel-averaging is 47.1212% done, 4.50917 s remaining
+subpixel-averaging is 93.4256% done, 0.281505 s remaining
+time for set_epsilon = 34.6769 s
+-----------
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+MPB solved for frequency_1(0.931628,0,0) = 0.687594 after 15 iters
+MPB solved for frequency_1(0.868968,0,0) = 0.64516 after 8 iters
+MPB solved for frequency_1(0.86897,0,0) = 0.645161 after 1 iters
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+MPB solved for frequency_1(0.931628,0,0) = 0.687594 after 15 iters
+MPB solved for frequency_1(0.868968,0,0) = 0.64516 after 8 iters
+MPB solved for frequency_1(0.86897,0,0) = 0.645161 after 1 iters
+field decay(t = 60.02): 9.22857949418368e-15 / 9.22857949418368e-15 = 1.0
+on time step 3333 (time=66.66), 0.00120015 s/step
+field decay(t = 120.04): 0.004470415810158186 / 0.004470415810158186 = 1.0
+on time step 6622 (time=132.44), 0.00121624 s/step
+field decay(t = 180.06): 0.1677762540127879 / 0.1677762540127879 = 1.0
+on time step 9965 (time=199.3), 0.00119674 s/step
+field decay(t = 240.08): 0.0032659704421079782 / 0.1677762540127879 = 0.01946622578579592
+on time step 13360 (time=267.2), 0.00117845 s/step
+field decay(t = 300.1): 5.770098084258926e-09 / 0.1677762540127879 = 3.4391625431207504e-08
+on time step 16362 (time=327.24), 0.00133277 s/step
+field decay(t = 360.12): 1.67797760094385e-14 / 0.1677762540127879 = 1.0001281831074586e-13
+run 0 finished at t = 360.12 (18006 timesteps)
+single-coupler 2-input @1550: bar 0.0339 (model, no screen: 0.0490), delta_fit = +0.0 deg
+delta(lambda): -8.8 deg @ 1481 nm ... +0.0 deg @ 1619 nm; slope +0.042 deg/nm
+
+Elapsed run time = 57.0744 s
