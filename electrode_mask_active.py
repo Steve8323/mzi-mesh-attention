@@ -79,8 +79,13 @@ sites.append(("GATE", rect(1.0, 5.0, Y_BUS+W/2+1.0, Y_BUS+W/2+4.0), 3.0, +1))
 gnd["GATEg"] = rect(1.0, 5.0, Y_BUS-W/2-4.0, Y_BUS-W/2-1.0)
 cx, cy = RING_C
 ri, ro = R_RING_D+W/2+1.0, R_RING_D+W/2+4.0
-sites.append(("RING", arc(cx,cy,ri,ro,250,375),
-              cx+(ri+ro)/2*np.cos(np.deg2rad(250)), -1))
+# ring trace must START INSIDE the arc's radial band at its own x
+# (the arc's global y-min is at a different x — a 0.25 um same-net gap
+# there would be an open circuit the clearance verifier cannot see)
+_rtx = cx+(ri+ro)/2*np.cos(np.deg2rad(250))
+_dy = np.sqrt(((ri+ro)/2)**2 - (_rtx-cx)**2)
+sites.append(("RING", arc(cx,cy,ri,ro,250,375), _rtx, -1))
+RING_Y0 = cy - _dy + 0.5              # inside the arc band at x=_rtx
 # routing: trace to y=+-58, jog at unique depth, pad de-overlapped
 Y_TR = 58.0
 for side in (+1,-1):
@@ -93,8 +98,11 @@ for side in (+1,-1):
     for i,((net,strip,tx,_),cpx) in enumerate(zip(ss,centers)):
         yj = side*(61.0+4.5*(len(ss)-1-i))
         ya,yb = (92.0,92.0+PAD) if side>0 else (-92.0-PAD,-92.0)
+        y_start = (strip[:,1].max() if side>0 else strip[:,1].min())
+        if net == "RING":
+            y_start = RING_Y0
         conductors[net] = [strip,
-            vseg(np.sign(side)*  (56.0 if net=="GATE" else 0)*0 + (strip[:,1].max() if side>0 else strip[:,1].min()), side*Y_TR, tx),
+            vseg(y_start, side*Y_TR, tx),
             vseg(side*Y_TR, yj, tx),
             hseg(tx, cpx, yj, w=1.5),
             vseg(yj, (ya+yb)/2, cpx, w=4.0),
