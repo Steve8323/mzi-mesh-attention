@@ -101,11 +101,12 @@ for side in (+1,-1):
         y_start = (strip[:,1].max() if side>0 else strip[:,1].min())
         if net == "RING":
             y_start = RING_Y0
+        OV = 0.5 * side          # junction OVERLAP: metal continuity
         conductors[net] = [strip,
-            vseg(y_start, side*Y_TR, tx),
-            vseg(side*Y_TR, yj, tx),
-            hseg(tx, cpx, yj, w=1.5),
-            vseg(yj, (ya+yb)/2, cpx, w=4.0),
+            vseg(y_start - OV, side*Y_TR + OV, tx),
+            vseg(side*Y_TR - OV, yj + OV, tx),
+            hseg(min(tx, cpx) - 1.0, max(tx, cpx) + 1.0, yj, w=1.5),
+            vseg(yj - OV, (ya+yb)/2, cpx, w=4.0),
             rect(cpx-PAD/2, cpx+PAD/2, ya, yb)]
 conductors["SUB"] = [rect(LTOT+100, LTOT+180, -92.0-PAD, -92.0)]
 for k,v in gnd.items(): conductors[k] = [v]
