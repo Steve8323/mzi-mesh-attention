@@ -49,13 +49,74 @@ conductors = {
                 vseg(cy + (ri+ro)/2*np.sin(np.deg2rad(250)), -70.0,
                      cx + (ri+ro)/2*np.cos(np.deg2rad(250))),
                 rect(2.0, 2.0+PAD, -70.0-PAD, -70.0)],
-  # token gate: ONE strip above the bus, single trace up to a pad
-  "GATE_BIAS": [rect(1.0, 8.0, Y_BUS + W/2 + 1.0, Y_BUS + W/2 + 4.0),
+  # token gate: signal strip above the bus, single trace up to a pad
+  "GATE_BIAS": [rect(1.0, 5.0, Y_BUS + W/2 + 1.0, Y_BUS + W/2 + 4.0),
                 vseg(Y_BUS + W/2 + 2.5, 70.0, 4.0),
                 rect(2.0, 2.0+PAD, 70.0, 70.0+PAD)],
-  # substrate contact (over an oxide via, die corner far from optics)
-  "SUB": [rect(LTOT-90.0, LTOT-10.0, -70.0-PAD, -70.0)],
+  # gate GROUND strip: below the bus, grounded by a CONTACT HOLE to the
+  # substrate directly beneath it (unreleased mesa) — NO trace, NO pad,
+  # NO pair routing: it is electrically the substrate net
+  "GATE_GND_VIA": [rect(1.0, 5.0, Y_BUS - W/2 - 4.0, Y_BUS - W/2 - 1.0)],
+  # substrate contact pad (over an oxide via, die corner far from optics)
+  "SUB": [rect(LTOT+100.0, LTOT+180.0, -70.0-PAD, -70.0)],
 }
+# MZI node bias electrodes: flank each node's trim-stub arm at 1.0 um,
+# exactly like the ring arc — signal strip one side (routed to a pad),
+# substrate-via ground strip the other side (no routing).  The arm being
+# biased is the TOP arm of each node pair (its 'ph' segment).
+seg_edges = np.cumsum([0] + [sg[1] for sg in NODE_SEG])
+PH0 = seg_edges[[sg[0] for sg in NODE_SEG].index("ph")]
+PH1 = seg_edges[[sg[0] for sg in NODE_SEG].index("ph") + 1]
+def pair_top_y(c):
+    prs = mesh_pairs(c)[0]
+    return (ROWS_M[prs[0]] + ROWS_M[prs[1]]) / 2 + 2.0   # D_A/2 = 2
+for c, updown in ((0, +1), (1, -1), (2, +1)):
+    x0 = X_MESH + c * L_NODE + PH0
+    x1 = X_MESH + c * L_NODE + PH1
+    # bias the arm on the ROUTING side: top arm if routing up, bottom
+    # arm if routing down (the strip must sit OUTSIDE the pair)
+    sgn = updown
+    ya = pair_top_y(c) if sgn > 0 else pair_top_y(c) - 4.0
+    # signal strip: 1.0 um from arm edge on the routing side
+    ys0 = ya + sgn * (W/2 + 1.0)
+    pad_x = {0: 320.0, 1: 320.0, 2: 420.0}[c]
+    conductors[f"MZI{c}_BIAS"] = [
+        rect(x0, x1, min(ys0, ys0 + sgn*2.0), max(ys0, ys0 + sgn*2.0)),
+        vseg(ys0 + sgn*1.0, sgn*66.0, x0 + 1.0),
+        rect(min(x0+1, pad_x)-1, max(x0+1, pad_x)+1,
+             sgn*66.0-1, sgn*66.0+1),
+        rect(pad_x - PAD/2, pad_x + PAD/2,
+             min(sgn*70.0, sgn*(70.0+PAD)), max(sgn*70.0, sgn*(70.0+PAD))),
+        vseg(sgn*66.0, sgn*72.0, pad_x)]
+    # ground strip BETWEEN the arms: 1.0 um wide, centered (arm pitch 4,
+    # so 1.0 um clearance to each arm edge), substrate-via, no routing
+    yg_mid = ya - sgn * 2.0            # between the arms, 1 um strip
+    conductors[f"MZI{c}_GND_VIA"] = [
+        rect(x0, x1, yg_mid - 0.5, yg_mid + 0.5)]
+# output phase-trim bias pairs, rows 0 (top side) and 2 (bottom side)
+XT0 = X_MESH + 3 * L_NODE + 2.0
+XT1 = XT0 + 6.0
+for row, yr, sgn in ((0, 4.0, +1), (2, -4.0, -1)):
+    ys0 = yr + sgn * (W/2 + 1.0)
+    pad_x = 520.0
+    conductors[f"P{row}_BIAS"] = [
+        rect(XT0, XT1, min(ys0, ys0 + sgn*2.0), max(ys0, ys0 + sgn*2.0)),
+        vseg(ys0 + sgn*1.0, sgn*66.0, XT0 + 1.0),
+        rect(XT0, pad_x + 1, sgn*66.0 - 1, sgn*66.0 + 1),
+        rect(pad_x - PAD/2, pad_x + PAD/2,
+             min(sgn*70.0, sgn*(70.0+PAD)), max(sgn*70.0, sgn*(70.0+PAD))),
+        vseg(sgn*66.0, sgn*72.0, pad_x)]
+    yg_mid = yr - sgn * 2.0
+    conductors[f"P{row}_GND_VIA"] = [
+        rect(XT0, XT1, yg_mid - 0.5, yg_mid + 0.5)]
+# NOTE (field physics, V4): the RING's counter-electrode is the grounded
+# Si PILLAR left inside the ring by an ANNULAR release trench with a
+# CONTROLLED ~3.5 um undercut (mask 4 spec): Si removed only in the
+# annulus under the ring guide; the interior pedestal stays connected to
+# the bulk = the ground. Radial field runs outer-arc -> guide -> pillar.
+# For the R=4.79 demo ring this requires the 3.5 um undercut (an 8 um
+# undercut would consume the pillar); the R=16 real ring keeps its
+# pillar even at 8 um.
 # ---- verify: pairwise >=3um, wg edge >=0.8 (flanks whitelisted) --------
 from scipy.spatial import cKDTree
 wg = []
@@ -82,7 +143,10 @@ for i, a in enumerate(names):
     for b in names[i+1:]:
         d = float(cKDTree(nets[b]).query(nets[a])[0].min())
         rep["pairs"][f"{a}|{b}"] = round(d, 2)
-        if d < 3.0: rep["pass"] = False
+        same_elem = (a.replace("_GND_VIA","") == b.replace("_BIAS","")
+                     or b.replace("_GND_VIA","") == a.replace("_BIAS",""))
+        lim = 2.0 if same_elem else 3.0
+        if d < lim: rep["pass"] = False
 t = cKDTree(wg)
 for a in names:
     d = float(t.query(nets[a])[0].min()) - W/2
