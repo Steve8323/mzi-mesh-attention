@@ -296,6 +296,37 @@ slot.</p>
 {img('fig8_density.png')}
 {density_html}
 
+<h2>9 &middot; Optimization campaign (4 loops, adversarial critic)</h2>
+{img('fig9_opt.png')}
+<p>Full log in <code>OPTIMIZATION.md</code>; each loop's methodology was
+adversarially reviewed by an independent critic agent whose findings set
+the next loop (results in <code>out/opt_loop1..4.json</code>).
+<b>The noise question:</b> inter-pulse overlap is real but is NOT guide
+dispersion (0.09 fs&sup2; of GDD over the delay ladder &mdash; zero); it
+is slot-tail overlap with a measured cliff when pulse FWHM exceeds
+~0.4&times;slot, plus ~2.2 fs/node of phase-screen walk-off. With
+realistic control errors the budget flips entirely: coupler fab disorder
+(12 mrad) &gt; phase-set/trim errors &gt; overlap ISI &gt; node dispersion
+&gt; guide dispersion (nil). <b>Key recoveries:</b> the exact per-node-
+&kappa; Clements compile (in-situ characterize each coupler to
+&le;5 mrad, then re-decompose) buys +1.0 bit and turns the dominant fab
+error into a calibration step; receiver choice is a TWO-way tie at spec
+(5.8&plusmn;0.1 bits, N=5: gaussian-filtered/TL source with peak readout
+vs raw compressed pulses with a &plusmn;100-fs-tolerant gated pulsed-LO
+homodyne &mdash; the gate may be the easier hardware; NEVER ring filters,
+Lorentzian tails cost 3+ bits); comb linewidth &le;1 MHz suffices (real
+microcombs: &lesssim;100 kHz).
+<b>The honest Pareto:</b> optical-in/optical-out layers would keep
+579&ndash;2079&times; B300 die density at 4.0&ndash;5.8 bits (UNSIMULATED
+as chained layers &mdash; flagged); pricing full electronic readout
+(staggered pulsed-LO I/Q receiver banks &mdash; no 2-THz ADC exists)
+collapses density to 23&ndash;142&times;. Critic-4 verdicts, six standing
+HIGH caveats (incl.: no energy/power axis anywhere; composition never
+checked against full-wave; score floors are noiseless), and the verbatim
+residual-risk statement are in <code>OPTIMIZATION.md</code>. Trajectory:
+7.2 bits (loop 1, naive) &rarr; 5.8&plusmn;0.1 (loop 4, honest) &mdash;
+the number fell every time the model told fewer lies.</p>
+
 <h2>Methods &amp; caveats</h2>
 <ul>
 <li>2D slab physics throughout, inherited from the silica repo; no

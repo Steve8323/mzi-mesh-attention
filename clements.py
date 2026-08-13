@@ -56,56 +56,78 @@ def _embed(N, m, M2):
     return T
 
 
+def _final_index(N):
+    """Map (creation order) -> final node-list index, for per-node kappa.
+    Final list = [left creations in order] + [right creations reversed]."""
+    p = sum(i + 1 for i in range(N - 1) if i % 2 == 1)   # left count
+    q = sum(i + 1 for i in range(N - 1) if i % 2 == 0)   # right count
+    return p, q
+
+
 def decompose(U, kappa=np.pi / 4):
-    """U = diag(d) @ prod_k M(nodes[k]) with couplers kappa (exact when every
-    null is reachable). Returns (nodes, d, resid) where resid sums clamped
-    nulling deficits (0.0 for generic targets)."""
+    """U = diag(d) @ prod_k M(nodes[k]) with couplers kappa (exact when
+    every null is reachable).  kappa may be a SCALAR or an ARRAY of
+    per-node coupler angles indexed by final node-list position — the
+    kappa-aware compile: each nulling step uses the measured kappa of the
+    physical node it configures.  Returns (nodes, d, resid)."""
     U = np.array(U, dtype=complex)
     N = U.shape[0]
+    p, q = _final_index(N)
+    kap_arr = (np.full(p + q, float(kappa))
+               if np.isscalar(kappa) else np.asarray(kappa, dtype=float))
+
+    def kap_of(is_right, created):
+        # right creation #c -> final index p + (q-1-c); left #c -> c
+        return kap_arr[p + (q - 1 - created) if is_right else created]
+
     V = U.copy()
     right, left = [], []
     resid = 0.0
     for i in range(N - 1):
         for j in range(i + 1):
             if i % 2 == 0:
+                kap = kap_of(True, len(right))
                 r, m = N - 1 - j, i - j
                 u1, u2 = V[r, m], V[r, m + 1]
                 # null (V M^H)[r,m]:  u1*conj(A)e^{-iph} = -u2*conj(B)
                 th, miss = _solve_theta(
-                    abs(u1) / max(abs(u2), 1e-300), kappa)
+                    abs(u1) / max(abs(u2), 1e-300), kap)
                 resid += miss
-                A, B, _ = _ABD(th, kappa)
+                A, B, _ = _ABD(th, kap)
                 ph = (np.angle(u1 * np.conj(A))
                       - np.angle(-u2 * np.conj(B))) if abs(u2) > 0 else 0.0
-                V = V @ _embed(N, m, node_matrix(th, ph, kappa)).conj().T
-                right.append({"m": m, "theta": th, "phi": ph})
+                V = V @ _embed(N, m, node_matrix(th, ph, kap)).conj().T
+                right.append({"m": m, "theta": th, "phi": ph,
+                              "kappa": kap})
             else:
+                kap = kap_of(False, len(left))
                 r, c = N - 1 - i + j, j
                 m = r - 1
                 u1, u2 = V[m, c], V[m + 1, c]
                 # null (M V)[m+1,c]:  B e^{i ph} u1 = -Dd u2
                 th, miss = _solve_theta(
-                    abs(u2) / max(abs(u1), 1e-300), kappa)
+                    abs(u2) / max(abs(u1), 1e-300), kap)
                 resid += miss
-                _, B, Dd = _ABD(th, kappa)
+                _, B, Dd = _ABD(th, kap)
                 ph = (np.angle(-Dd * u2)
                       - np.angle(B * u1)) if abs(u1) > 0 else 0.0
-                V = _embed(N, m, node_matrix(th, ph, kappa)) @ V
-                left.append({"m": m, "theta": th, "phi": ph})
+                V = _embed(N, m, node_matrix(th, ph, kap)) @ V
+                left.append({"m": m, "theta": th, "phi": ph, "kappa": kap})
     d = np.diag(V).copy()
     offdiag = np.max(np.abs(V - np.diag(d)))
     # sweep D through the daggered left factors:
     # M(th,ph)^H diag(d1,d2) = diag(delta1, delta2) M(th, ph')
     chain = []
     for nd in reversed(left):
-        m, th, ph = nd["m"], nd["theta"], nd["phi"]
-        A, B, Dd = _ABD(th, kappa)
+        m, th, ph, kap = nd["m"], nd["theta"], nd["phi"], nd["kappa"]
+        A, B, Dd = _ABD(th, kap)
         d1, d2 = d[m], d[m + 1]
         ph_new = np.angle((np.conj(A) / A) * (B / np.conj(B)) * (d1 / d2))
         delta1 = (np.conj(B) / B) * np.exp(-1j * ph) * d2
         delta2 = (np.conj(Dd) / Dd) * d2
         d[m], d[m + 1] = delta1, delta2
-        chain.insert(0, {"m": m, "theta": th, "phi": ph_new})
+        chain.insert(0, {"m": m, "theta": th, "phi": ph_new,
+                         "kappa": kap})
     nodes = chain + list(reversed(right))
     return nodes, d, float(resid + offdiag)
 

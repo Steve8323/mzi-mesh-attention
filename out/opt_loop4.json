@@ -1,0 +1,259 @@
+{
+ "loop": 4,
+ "kappa_aware": [
+  {
+   "tag": "naive",
+   "bits_mean": 4.774371185347175,
+   "bits_std": 0.27917651426261236,
+   "bits_rowgain_mean": 4.953442314875651,
+   "bits_rowgain_std": 0.32515414820390487,
+   "isi_mean": 8.532608677766815e-09,
+   "n_seeds": 8,
+   "kw": {
+    "N": 5,
+    "T0": 1.2e-13,
+    "phase_set_rms": 0.005,
+    "kappa_sigma": 0.012,
+    "delay_phase_rms": 0.005,
+    "comb_linewidth_hz": 1000000.0,
+    "kappa_aware": false
+   }
+  },
+  {
+   "tag": "aware_char0mrad",
+   "bits_mean": 5.777177506540461,
+   "bits_std": 0.19160046853358761,
+   "bits_rowgain_mean": 5.993276959425241,
+   "bits_rowgain_std": 0.21501768838239393,
+   "isi_mean": 8.593567814776315e-09,
+   "n_seeds": 8,
+   "kw": {
+    "N": 5,
+    "T0": 1.2e-13,
+    "phase_set_rms": 0.005,
+    "kappa_sigma": 0.012,
+    "delay_phase_rms": 0.005,
+    "comb_linewidth_hz": 1000000.0,
+    "kappa_aware": true,
+    "kappa_char_rms": 0.0
+   }
+  },
+  {
+   "tag": "aware_char2mrad",
+   "bits_mean": 5.881289299022759,
+   "bits_std": 0.10158716825658463,
+   "bits_rowgain_mean": 6.111767514843573,
+   "bits_rowgain_std": 0.14713929490999014,
+   "isi_mean": 8.59522570091674e-09,
+   "n_seeds": 8,
+   "kw": {
+    "N": 5,
+    "T0": 1.2e-13,
+    "phase_set_rms": 0.005,
+    "kappa_sigma": 0.012,
+    "delay_phase_rms": 0.005,
+    "comb_linewidth_hz": 1000000.0,
+    "kappa_aware": true,
+    "kappa_char_rms": 0.002
+   }
+  },
+  {
+   "tag": "aware_char5mrad",
+   "bits_mean": 5.5654439189291285,
+   "bits_std": 0.12994334705696794,
+   "bits_rowgain_mean": 5.784820660629681,
+   "bits_rowgain_std": 0.1554966674221428,
+   "isi_mean": 8.593156902395093e-09,
+   "n_seeds": 8,
+   "kw": {
+    "N": 5,
+    "T0": 1.2e-13,
+    "phase_set_rms": 0.005,
+    "kappa_sigma": 0.012,
+    "delay_phase_rms": 0.005,
+    "comb_linewidth_hz": 1000000.0,
+    "kappa_aware": true,
+    "kappa_char_rms": 0.005
+   }
+  },
+  {
+   "tag": "aware_char10mrad",
+   "bits_mean": 5.001582295854064,
+   "bits_std": 0.21957573568851152,
+   "bits_rowgain_mean": 5.210749464412363,
+   "bits_rowgain_std": 0.23087003550633242,
+   "isi_mean": 8.590113761045642e-09,
+   "n_seeds": 8,
+   "kw": {
+    "N": 5,
+    "T0": 1.2e-13,
+    "phase_set_rms": 0.005,
+    "kappa_sigma": 0.012,
+    "delay_phase_rms": 0.005,
+    "comb_linewidth_hz": 1000000.0,
+    "kappa_aware": true,
+    "kappa_char_rms": 0.01
+   }
+  }
+ ],
+ "comb": [
+  {
+   "linewidth_hz": 0.0,
+   "bits": 5.825474363985523,
+   "score_rms_lag4": 7.928556170971148e-06
+  },
+  {
+   "linewidth_hz": 100000.0,
+   "bits": 5.819952879803037,
+   "score_rms_lag4": 7.497065465012466e-06
+  },
+  {
+   "linewidth_hz": 1000000.0,
+   "bits": 5.766747207045107,
+   "score_rms_lag4": 9.533953763708888e-06
+  },
+  {
+   "linewidth_hz": 10000000.0,
+   "bits": 5.402734067845775,
+   "score_rms_lag4": 6.316791341005827e-05
+  }
+ ],
+ "finalists": {
+  "TL120_peak": {
+   "bits_mean": 5.789163853116808,
+   "bits_std": 0.09920596304946067,
+   "bits_rowgain_mean": 6.017049813790807,
+   "bits_rowgain_std": 0.14335740655611057,
+   "isi_mean": 8.594513294761405e-09,
+   "n_seeds": 8,
+   "kw": {
+    "N": 5,
+    "kappa_aware": true,
+    "kappa_char_rms": 0.003,
+    "phase_set_rms": 0.005,
+    "kappa_sigma": 0.012,
+    "delay_phase_rms": 0.005,
+    "comb_linewidth_hz": 1000000.0,
+    "T0": 1.2e-13,
+    "receiver": "peak"
+   }
+  },
+  "raw10_gate": {
+   "bits_mean": 5.800123474088961,
+   "bits_std": 0.10351848045701208,
+   "bits_rowgain_mean": 6.029180377739964,
+   "bits_rowgain_std": 0.14585729218255553,
+   "isi_mean": 7.1121113939098465e-09,
+   "n_seeds": 8,
+   "kw": {
+    "N": 5,
+    "kappa_aware": true,
+    "kappa_char_rms": 0.003,
+    "phase_set_rms": 0.005,
+    "kappa_sigma": 0.012,
+    "delay_phase_rms": 0.005,
+    "comb_linewidth_hz": 1000000.0,
+    "T0": 9.86e-15,
+    "receiver": "gate",
+    "gate_fs": 250.0
+   }
+  },
+  "gaussfilt_peak": {
+   "bits_mean": 5.789147342260588,
+   "bits_std": 0.09920976910325773,
+   "bits_rowgain_mean": 6.017044301542295,
+   "bits_rowgain_std": 0.1433570341117263,
+   "isi_mean": 9.45758491860204e-09,
+   "n_seeds": 8,
+   "kw": {
+    "N": 5,
+    "kappa_aware": true,
+    "kappa_char_rms": 0.003,
+    "phase_set_rms": 0.005,
+    "kappa_sigma": 0.012,
+    "delay_phase_rms": 0.005,
+    "comb_linewidth_hz": 1000000.0,
+    "T0": 9.86e-15,
+    "filter_kind": "gauss",
+    "receiver": "peak"
+   }
+  }
+ },
+ "score_full": [
+  {
+   "dkap": 0.0,
+   "lw": 0.0,
+   "score_rms": {
+    "1": 1.0867366378794685e-05,
+    "4": 7.477093299763922e-06
+   }
+  },
+  {
+   "dkap": 0.012,
+   "lw": 0.0,
+   "score_rms": {
+    "1": 1.1178895577000143e-05,
+    "4": 7.9869421089474e-06
+   }
+  },
+  {
+   "dkap": 0.012,
+   "lw": 1000000.0,
+   "score_rms": {
+    "1": 1.2552198608341449e-05,
+    "4": 1.0494365281950451e-05
+   }
+  }
+ ],
+ "shot_note": "homodyne shot limit: bits ~ log2(sqrt(2*Nph)); 8 bits -> 3.3e4 photons/slot = 4.2 fJ/slot/port = 8.4 uW/port at 2 THz",
+ "pareto": [
+  {
+   "N": 5,
+   "slot_fs": 501.26,
+   "bits": 5.806823717744592,
+   "bits_std": 0.09373095696944717,
+   "dens_optical_out": 578.6869429989606,
+   "dens_electronic_readout": 22.908660541532633
+  },
+  {
+   "N": 5,
+   "slot_fs": 250.63,
+   "bits": 5.7681211204016485,
+   "bits_std": 0.09935542395621061,
+   "dens_optical_out": 1375.4219960119958,
+   "dens_electronic_readout": 46.10667956803898
+  },
+  {
+   "N": 8,
+   "slot_fs": 501.26,
+   "bits": 5.148177290980986,
+   "bits_std": 0.29554092266919474,
+   "dens_optical_out": 700.8130846807078,
+   "dens_electronic_readout": 36.19366922148802
+  },
+  {
+   "N": 8,
+   "slot_fs": 250.63,
+   "bits": 5.087257355059614,
+   "bits_std": 0.2768591298903435,
+   "dens_optical_out": 1774.1817283739306,
+   "dens_electronic_readout": 73.1809747854732
+  },
+  {
+   "N": 16,
+   "slot_fs": 501.26,
+   "bits": 4.192296341951484,
+   "bits_std": 0.19663722974736966,
+   "dens_optical_out": 779.4684284871579,
+   "dens_electronic_readout": 69.52150113632268
+  },
+  {
+   "N": 16,
+   "slot_fs": 250.63,
+   "bits": 3.9718513213307403,
+   "bits_std": 0.15821232692871393,
+   "dens_optical_out": 2079.241068362838,
+   "dens_electronic_readout": 142.2171346317586
+  }
+ ]
+}

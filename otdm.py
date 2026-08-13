@@ -80,22 +80,25 @@ def propagate(X, t, transfer):
     return np.fft.ifft(Yf, axis=1)
 
 
-def mesh_transfer_fn(nodes, d, N, cal, phase_screen=None):
+def mesh_transfer_fn(nodes, d, N, cal, phase_screen=None, dkappa=None):
     """Vectorized wavelength-dependent mesh transfer (nbin, N, N).
 
     phase_screen(lam_um) -> radians added to every node's INTERNAL arm
     phase: the unmodeled smooth MZI phase dispersion measured by the
-    two-input quadrature FDTD (node2/coupler2 runs): ~ -0.253 deg/nm,
-    zero at 1550 after the static per-node calibration."""
+    two-input quadrature FDTD (node2/coupler2 runs), zero at 1550 after
+    the static per-node calibration.
+    dkappa: optional per-node coupler-angle offsets (fab disorder,
+    len(nodes) array) applied EXACTLY to both couplers of that node."""
     def fn(lam):
         lam = np.asarray(lam)
-        kap = cal.kappa(lam)
+        kap0 = cal.kappa(lam)
         amp = cal.amp(lam)
         scale = LAM0 / lam
         scr = phase_screen(lam) if phase_screen is not None else 0.0
         nb = len(lam)
         M = np.broadcast_to(np.eye(N, dtype=complex), (nb, N, N)).copy()
-        for nd in nodes:
+        for i_nd, nd in enumerate(nodes):
+            kap = kap0 + (dkappa[i_nd] if dkappa is not None else 0.0)
             th = nd["theta"] * scale + scr
             ph = nd["phi"] * scale
             c, s = np.cos(kap), np.sin(kap)

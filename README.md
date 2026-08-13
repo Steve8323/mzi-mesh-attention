@@ -26,10 +26,15 @@ calibrations, copied verbatim into `calib/` (see Provenance).
 | FDTD checks | coherent 2-input node: rms 0.0043 @1550 after static phase cal (κ unchanged, LP_eff 23.70→23.88); score head on real pulse trains: token products to **rms 1e-4** |
 | scaling | 6.8 bits (N=5) → 4.0 bits (N=32), loss 2.3 dB at N=32, 10-bit phase DACs suffice; N² MACs / 501 fs slot |
 | **compute density vs B300** | B300 die = 4.5e12 MAC/s/mm² (15 PFLOPS dense FP4 / 1650 mm²). Compact node (52.6 µm, 4 µm pitch, FDTD-recalibrated, geometric θ, screen only +0.10°/nm): **N=5 → 579×, N=32 → 802×** at 5–7 bits; 4 THz slot → 2184×, WDM d=10 + demux → 1623× (caveats in report §8). Honest accounting: mesh + delay coils + ring + tree + demux, ×1.15 routing; writer DACs/PDs off-die; energy NOT audited |
+| **optimization campaign (4 loops + critic)** | OPTIMIZATION.md: "noise" = coupler fab disorder > control errors > slot-overlap ISI (cliff at FWHM > 0.4·slot) > node dispersion > guide dispersion (nil). κ-aware per-node compile **+1.0 bit** (char ≤5 mrad); comb ≤1 MHz fine; receiver two-way tie at **5.8±0.1 bits** (N=5, full error model); honest Pareto: optical-out 579–2079×, **electronic readout 23–142×**. Trajectory 7.2→5.8 bits as the model got honest |
+| **end-to-end + electronics MEEP** | one 1550 bus → taps → arc-length-solved meander delays → 3×3 mesh in ONE cell (delays measured 0.92/1.79 slots); add-drop token gate **13.6 dB** via Δn; heater trim tracks calibrated curve within 0.04; single-line FWM shown, comb self-start honestly NOT (needs Q~1e8 regime) |
 
 ## Layout
 
 ```
+BUILD.md           HOW TO MAKE IT: 2-layer (optics + electronics) all-SiO2
+                   chip, 4 masks, tolerances, calibration; every electronic
+                   function MEEP-verified as a quasi-static dn (E1/E2)
 ANALYSIS.md        the attention question, answered first
 node.py            FDTD-calibrated 2x2 node model (kappa(lam), LP_eff, loss)
 clements.py        native-imperfect-coupler Clements decomposition + mesh
@@ -48,6 +53,13 @@ fdtd_compact.py    MEEP: compact node (52.6 µm) — coupler sweep, geometric
                    theta, quadrature screen
 compact_cal.py     assembles the compact calibration + OTDM accuracy
 density.py         compute-density audit vs B300 (out/density.json)
+fdtd_e2e.py        MEEP: END-TO-END cell — one 1550 bus -> taps -> exact
+                   one-slot meander delays (arc-length-solved) -> 3x3 mesh
+fdtd_electronics.py MEEP: electronics layer as quasi-static dn — E1 ring
+                   token gate on/off, E2 heater weight trim vs model
+fdtd_comb_ignite.py MEEP: single-line comb ignition (boosted chi3, labeled)
+snapshots.py       geometry renders + |Ez| frames (node/score/5x5 mesh)
+snap_gallery.py    self-contained snapshots.html gallery
 figs.py report.py  figures + self-contained report.html
 calib/             copied FDTD calibration JSONs (provenance below)
 ```
@@ -70,6 +82,11 @@ $PY fdtd_compact.py mzi 5.8 0         # compact cross state
 $PY fdtd_compact.py mzi 5.8 0.3003    # geometric theta = pi/2
 $PY fdtd_compact.py mzi2 5.8 0        # compact quadrature screen
 $PY compact_cal.py && $PY density.py
+$PY snapshots.py                      # geometry + |Ez| scenes
+$PY fdtd_e2e.py                       # END-TO-END: 1550 -> split -> delays -> mesh
+$PY fdtd_electronics.py all           # E1 ring gate, E2 heater trim (dn surrogates)
+$PY fdtd_comb_ignite.py               # single-line FWM (boosted chi3, labeled)
+$PY snap_gallery.py                   # snapshots.html
 $PY figs.py && $PY report.py
 ```
 

@@ -392,6 +392,78 @@ def fig_density():
     return True
 
 
+# ------------------------------------------------------------- fig 9 -----
+def fig_opt():
+    l1, l3, l4 = jload("opt_loop1.json"), jload("opt_loop3.json"), \
+        jload("opt_loop4.json")
+    if not (l1 and l3 and l4):
+        print("  opt fig skipped")
+        return False
+    fig, axs = plt.subplots(2, 2, figsize=(10.5, 6.6), dpi=150)
+    ax = axs[0, 0]
+    sw = l1["T0_sweep"]
+    fw = [r["fwhm_fs"] for r in sw]
+    ax.plot(fw, [r["bits"] for r in sw], "o-", color=C["blue"], lw=2,
+            label="mesh bits")
+    ax2c = [r["score_rms"]["1"] for r in sw]
+    ax.set_xlabel("pulse FWHM (fs)  [slot 501 fs]")
+    ax.set_ylabel("mesh accuracy (bits)")
+    ax.axvline(0.4 * 501, color=C["verm"], lw=1, ls="--")
+    ax.text(0.4 * 501 + 6, 3.2, "slot-stuffing cliff\n(overlap ISI)",
+            fontsize=8, color=C["verm"])
+    ax.set_title("loop 1: the overlap-'noise' cliff — pulse ≤ 0.4·slot",
+                 fontsize=9)
+    ax.legend(frameon=False, fontsize=8)
+    ax = axs[0, 1]
+    for term, col in (("kappa_sigma", C["verm"]),
+                      ("phase_set_rms", C["blue"]),
+                      ("delay_phase_rms", C["orange"])):
+        rows = l3["sensitivity"][term]
+        ax.plot([r["mrad"] for r in rows],
+                [r["bits_mean"] for r in rows], "o-", color=col, lw=2,
+                label=term.replace("_rms", "").replace("_", " "))
+    ax.set_xlabel("control error (mrad rms)")
+    ax.set_ylabel("bits (N=5, 120 fs)")
+    ax.set_title("loop 3: coupler disorder dominates the budget",
+                 fontsize=9)
+    ax.legend(frameon=False, fontsize=8)
+    ax = axs[1, 0]
+    ka = l4["kappa_aware"]
+    xs = np.arange(len(ka))
+    ax.bar(xs, [r["bits_mean"] for r in ka], 0.6,
+           yerr=[r["bits_std"] for r in ka],
+           color=[C["grey"]] + [C["green"]] * (len(ka) - 1), capsize=3)
+    ax.set_xticks(xs)
+    ax.set_xticklabels([r["tag"].replace("aware_char", "χ ")
+                        .replace("mrad", "") for r in ka], fontsize=8)
+    ax.set_ylabel("bits at full spec")
+    ax.set_title("loop 4: κ-aware compile (+1.0 bit) vs\n"
+                 "characterization error", fontsize=9)
+    ax = axs[1, 1]
+    par = l4["pareto"]
+    for key, col, lab in (("dens_optical_out", C["blue"],
+                           "optical-in/optical-out"),
+                          ("dens_electronic_readout", C["verm"],
+                           "full electronic readout")):
+        ax.scatter([r[key] for r in par], [r["bits"] for r in par],
+                   s=42, color=col, label=lab)
+        for r in par:
+            ax.annotate(f"N{r['N']}/{r['slot_fs']:.0f}",
+                        (r[key], r["bits"]), textcoords="offset points",
+                        xytext=(4, 3), fontsize=6.5)
+    ax.axvspan(100, 1000, color=C["green"], alpha=0.10)
+    ax.set_xscale("log")
+    ax.set_xlabel("compute density (×B300 die)")
+    ax.set_ylabel("bits at full spec")
+    ax.set_title("loop 4: the honest Pareto — readout is the tax",
+                 fontsize=9)
+    ax.legend(frameon=False, fontsize=8)
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIG, "fig9_opt.png"), bbox_inches="tight")
+    plt.close(fig)
+    return True
+
+
 if __name__ == "__main__":
     fig_schematic()
     fig_node_cal()
@@ -401,4 +473,6 @@ if __name__ == "__main__":
     ok = fig_fdtd()
     fig_scaling()
     ok2 = fig_density()
-    print("figs written", "(fdtd pending)" if not (ok and ok2) else "")
+    ok3 = fig_opt()
+    print("figs written", "(some pending)" if not (ok and ok2 and ok3)
+          else "")

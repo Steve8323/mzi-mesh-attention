@@ -77,6 +77,44 @@ and cascades through the five columns; as-drawn nodes sit at their cross
 state, so power ping-pongs across the array — every coupler event in this
 picture is one MAC of the systolic convolution.</p>
 
+<h2>7 · END-TO-END (measured delays: 0.92 / 1.79 slots vs targets 1 / 2): one 1550 input → split → 1-slot delays → mesh</h2>
+{img('snap_e2e_eps.png')}
+{img('snap_e2e_frames.png')}
+<p class="c">The whole optical chain in ONE cell (N=3, res 20, 150 fs
+slots — scale model of the 501 fs / 100.53 µm chip rule). One eigenmode
+source on the bus; two taps + the bus bend make three channels; the
+raised-cosine meanders are SOLVED by arc-length bisection to exactly one
+and two slots of extra path; the achieved delays are then MEASURED at the
+mesh inputs (title). You can watch the same train arrive at the three
+mesh rows staggered by one slot each — the sliding window forming — and
+then mix through the three nodes.</p>
+
+<h2>8 · The electronics layer, run "artificially" as Δn</h2>
+{img('snap_elec_ring.png')}
+<p class="c">E1 — token-writer gate as an ADD-DROP ring: electrode Δn = 0
+vs 5e-3 slides the drop resonance 5.5 nm off the fixed 1549.5 nm line —
+<b>13.6 dB gate contrast</b> (drop 0.60 → 0.026, through 0.31 → 0.97),
+ring visibly lit vs dark. The surrogate Δn matches the real chip's
+shift-to-linewidth ratio: at Q=10⁷ the true silica DC-Kerr Δn (~2.6e-6 at
+bias) is 18 linewidths — same mechanism, resolvable in FDTD time.</p>
+{img('snap_elec_trim.png')}
+<p class="c">E2 — weight trim: heater-surrogate Δn = ±0.02 on the 6 µm
+trim stub of a node parked at geometric θ=π/2. The signed output s moves
+along the calibrated s(θ) curve — the electronic knob does exactly what
+the model says it should.</p>
+
+<h2>9 · Comb ignition from ONE line — honest verdict: marginal</h2>
+{img('snap_comb.png')}
+<p class="c">Single pump on a ring resonance, χ³ boosted (0.05, labeled),
+plus a 1e-3 broadband burst standing in for vacuum noise. While the seed
+is present, stimulated FWM puts the ±FSR sidebands ~30 dB over the far
+floor; in the LATE window (seed gone) they persist only 6–9 dB above the
+local pedestal — <b>self-starting ignition is NOT demonstrated in this
+FDTD</b>, consistent with this ring sitting at zero GVD where single-pump
+MI gain is marginal. The real chip's comb needs the literature silica
+regime (Q~1e8, engineered anomalous dispersion, LLE dynamics) — that is
+the one block of BUILD.md that leans on demonstrated-elsewhere physics.</p>
+
 <p style="color:#8a8a97">Generated {datetime.datetime.now():%Y-%m-%d %H:%M}
 &middot; snapshots.py &middot; local MEEP</p>
 </body></html>"""

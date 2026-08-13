@@ -1,0 +1,519 @@
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000352859 s
+Working in 2D dimensions.
+Computational cell is 28 x 28.48 x 0 with resolution 25
+     block, center = (0,9.241,0)
+          size (1e+20,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (0,-9.241,0)
+          size (1e+20,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.393181 s
+-----------
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+Meep: using complex fields.
+MPB solved for frequency_1(0.931628,0,0) = 0.687985 after 14 iters
+MPB solved for frequency_1(0.868513,0,0) = 0.645138 after 7 iters
+MPB solved for frequency_1(0.868547,0,0) = 0.645161 after 3 iters
+MPB solved for frequency_1(0.868547,0,0) = 0.645161 after 1 iters
+on time step 1884 (time=37.68), 0.00212377 s/step
+on time step 3781 (time=75.62), 0.00210892 s/step
+on time step 5691 (time=113.82), 0.00209445 s/step
+on time step 7601 (time=152.02), 0.00209475 s/step
+on time step 9503 (time=190.06), 0.00210373 s/step
+field decay(t = 200.02): 1.2381980148310664e-07 / 1.2381980148310664e-07 = 1.0
+on time step 11410 (time=228.2), 0.00209776 s/step
+on time step 13317 (time=266.34), 0.00209769 s/step
+on time step 15183 (time=303.66), 0.00214478 s/step
+on time step 17087 (time=341.74), 0.00210139 s/step
+on time step 18948 (time=378.96), 0.00215038 s/step
+field decay(t = 400.04): 0.00022655633710093315 / 0.00022655633710093315 = 1.0
+on time step 20848 (time=416.96), 0.00210557 s/step
+on time step 22754 (time=455.08), 0.00209884 s/step
+on time step 24572 (time=491.44), 0.00220072 s/step
+on time step 26464 (time=529.28), 0.0021146 s/step
+on time step 28368 (time=567.36), 0.00210149 s/step
+field decay(t = 600.0600000000001): 0.04918637691714624 / 0.04918637691714624 = 1.0
+on time step 30256 (time=605.12), 0.00211948 s/step
+on time step 32154 (time=643.08), 0.00210775 s/step
+on time step 34063 (time=681.26), 0.0020955 s/step
+on time step 35969 (time=719.38), 0.00209885 s/step
+on time step 37876 (time=757.52), 0.0020978 s/step
+on time step 39789 (time=795.78), 0.00209113 s/step
+field decay(t = 800.08): 1.2670728508457232 / 1.2670728508457232 = 1.0
+on time step 41699 (time=833.98), 0.00209473 s/step
+on time step 43605 (time=872.1), 0.00209905 s/step
+on time step 45520 (time=910.4), 0.00208942 s/step
+on time step 47429 (time=948.58), 0.00209593 s/step
+on time step 49337 (time=986.74), 0.00209731 s/step
+field decay(t = 1000.1): 3.8729958343202058 / 3.8729958343202058 = 1.0
+on time step 51240 (time=1024.8), 0.00210261 s/step
+on time step 53068 (time=1061.36), 0.00218882 s/step
+on time step 54967 (time=1099.34), 0.00210722 s/step
+on time step 56859 (time=1137.18), 0.00211528 s/step
+on time step 58748 (time=1174.96), 0.00211787 s/step
+field decay(t = 1200.1200000000001): 3.8754112708797472 / 3.8754112708797472 = 1.0
+on time step 60644 (time=1212.88), 0.00210996 s/step
+on time step 62544 (time=1250.88), 0.00210633 s/step
+on time step 64432 (time=1288.64), 0.00211934 s/step
+on time step 66335 (time=1326.7), 0.00210234 s/step
+on time step 68238 (time=1364.76), 0.00210294 s/step
+field decay(t = 1400.14): 1.4044004474486327 / 3.8754112708797472 = 0.3623874601391205
+on time step 70134 (time=1402.68), 0.00211024 s/step
+on time step 72014 (time=1440.28), 0.00212772 s/step
+on time step 73917 (time=1478.34), 0.0021028 s/step
+on time step 75820 (time=1516.4), 0.00210264 s/step
+on time step 77729 (time=1554.58), 0.00209599 s/step
+on time step 79636 (time=1592.72), 0.00209764 s/step
+field decay(t = 1600.16): 0.06042569659481716 / 3.8754112708797472 = 0.015592073297836097
+on time step 81491 (time=1629.82), 0.00215731 s/step
+on time step 83342 (time=1666.84), 0.00216175 s/step
+on time step 85242 (time=1704.84), 0.00210629 s/step
+on time step 87152 (time=1743.04), 0.0020952 s/step
+on time step 89059 (time=1781.18), 0.00209872 s/step
+field decay(t = 1800.18): 0.00030849032151734755 / 3.8754112708797472 = 7.960195704527586e-05
+on time step 90962 (time=1819.24), 0.00210217 s/step
+on time step 92870 (time=1857.4), 0.00209754 s/step
+on time step 94775 (time=1895.5), 0.00210033 s/step
+on time step 96682 (time=1933.64), 0.00209807 s/step
+on time step 98590 (time=1971.8), 0.00209657 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+field decay(t = 2000.2): 1.8687441707515762e-07 / 3.8754112708797472 = 4.8220538160517796e-08
+run 0 finished at t = 2000.2 (100010 timesteps)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000215054 s
+Working in 2D dimensions.
+Computational cell is 28 x 28.48 x 0 with resolution 25
+     cylinder, center = (0,0,0)
+          radius 8.4955, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     cylinder, center = (0,0,0)
+          radius 7.5045, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,9.241,0)
+          size (1e+20,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (0,-9.241,0)
+          size (1e+20,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 1.08045 s
+-----------
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+Meep: using complex fields.
+MPB solved for frequency_1(0.931628,0,0) = 0.687985 after 14 iters
+MPB solved for frequency_1(0.868513,0,0) = 0.645138 after 7 iters
+MPB solved for frequency_1(0.868547,0,0) = 0.645161 after 3 iters
+MPB solved for frequency_1(0.868547,0,0) = 0.645161 after 1 iters
+on time step 1881 (time=37.62), 0.00212695 s/step
+on time step 3789 (time=75.78), 0.00209724 s/step
+on time step 5693 (time=113.86), 0.0021014 s/step
+on time step 7603 (time=152.06), 0.00209459 s/step
+on time step 9493 (time=189.86), 0.00211696 s/step
+field decay(t = 200.02): 1.0395452986439436e-07 / 1.0395452986439436e-07 = 1.0
+on time step 11376 (time=227.52), 0.00212484 s/step
+on time step 13276 (time=265.52), 0.00210559 s/step
+on time step 15183 (time=303.66), 0.00209758 s/step
+on time step 17090 (time=341.8), 0.00209816 s/step
+on time step 18990 (time=379.8), 0.00210628 s/step
+field decay(t = 400.04): 0.0001844802124060135 / 0.0001844802124060135 = 1.0
+on time step 20905 (time=418.1), 0.0020896 s/step
+on time step 22811 (time=456.22), 0.0020988 s/step
+on time step 24714 (time=494.28), 0.00210204 s/step
+on time step 26626 (time=532.52), 0.00209288 s/step
+on time step 28469 (time=569.38), 0.00217087 s/step
+field decay(t = 600.0600000000001): 0.03794148384395268 / 0.03794148384395268 = 1.0
+on time step 30379 (time=607.58), 0.00209501 s/step
+on time step 32284 (time=645.68), 0.00209985 s/step
+on time step 34189 (time=683.78), 0.00209978 s/step
+on time step 36078 (time=721.56), 0.00211836 s/step
+on time step 37985 (time=759.7), 0.00209839 s/step
+on time step 39820 (time=796.4), 0.0021805 s/step
+field decay(t = 800.08): 0.875329583929454 / 0.875329583929454 = 1.0
+on time step 41721 (time=834.42), 0.00210441 s/step
+on time step 43618 (time=872.36), 0.00210879 s/step
+on time step 45495 (time=909.9), 0.00213135 s/step
+on time step 47400 (time=948), 0.00210043 s/step
+on time step 49306 (time=986.12), 0.00209925 s/step
+field decay(t = 1000.1): 2.0898336466122664 / 2.0898336466122664 = 1.0
+on time step 51213 (time=1024.26), 0.00209851 s/step
+on time step 53115 (time=1062.3), 0.00210366 s/step
+on time step 55026 (time=1100.52), 0.00209362 s/step
+on time step 56933 (time=1138.66), 0.00209829 s/step
+on time step 58843 (time=1176.86), 0.00209448 s/step
+field decay(t = 1200.1200000000001): 2.0233310154420594 / 2.0898336466122664 = 0.9681780263811852
+on time step 60757 (time=1215.14), 0.00209053 s/step
+on time step 62664 (time=1253.28), 0.00209842 s/step
+on time step 64575 (time=1291.5), 0.00209383 s/step
+on time step 66477 (time=1329.54), 0.00210342 s/step
+on time step 68279 (time=1365.58), 0.00222109 s/step
+field decay(t = 1400.14): 0.24845773066593704 / 2.0898336466122664 = 0.11888875991096252
+on time step 70143 (time=1402.86), 0.00214661 s/step
+on time step 72049 (time=1440.98), 0.00209964 s/step
+on time step 73959 (time=1479.18), 0.00209511 s/step
+on time step 75863 (time=1517.26), 0.00210109 s/step
+on time step 77779 (time=1555.58), 0.0020883 s/step
+on time step 79682 (time=1593.64), 0.00210256 s/step
+field decay(t = 1600.16): 0.1799244615956768 / 2.0898336466122664 = 0.08609511187043241
+on time step 81582 (time=1631.64), 0.00210562 s/step
+on time step 83493 (time=1669.86), 0.00209385 s/step
+on time step 85403 (time=1708.06), 0.00209537 s/step
+on time step 87317 (time=1746.34), 0.00209048 s/step
+on time step 89228 (time=1784.56), 0.00209377 s/step
+field decay(t = 1800.18): 0.1308432110363804 / 2.0898336466122664 = 0.06260939058402297
+on time step 91139 (time=1822.78), 0.00209379 s/step
+on time step 93049 (time=1860.98), 0.0020947 s/step
+on time step 94922 (time=1898.44), 0.00213567 s/step
+on time step 96804 (time=1936.08), 0.00212552 s/step
+on time step 98648 (time=1972.96), 0.00217023 s/step
+field decay(t = 2000.2): 0.0493529514977282 / 2.0898336466122664 = 0.023615732083619195
+on time step 100534 (time=2010.68), 0.00212103 s/step
+on time step 102439 (time=2048.78), 0.00209983 s/step
+on time step 104317 (time=2086.34), 0.00213069 s/step
+on time step 106208 (time=2124.16), 0.00211633 s/step
+on time step 108114 (time=2162.28), 0.00209864 s/step
+field decay(t = 2200.2200000000003): 0.017217257964123298 / 2.0898336466122664 = 0.008238578219866163
+on time step 110017 (time=2200.34), 0.00210196 s/step
+on time step 111923 (time=2238.46), 0.00209901 s/step
+on time step 113829 (time=2276.58), 0.00209987 s/step
+on time step 115746 (time=2314.92), 0.00208667 s/step
+on time step 117648 (time=2352.96), 0.00210426 s/step
+on time step 119539 (time=2390.78), 0.00211617 s/step
+field decay(t = 2400.2400000000002): 0.005990871157424015 / 2.0898336466122664 = 0.002866673702538736
+on time step 121442 (time=2428.84), 0.00210257 s/step
+on time step 123333 (time=2466.66), 0.00211614 s/step
+on time step 125189 (time=2503.78), 0.00215659 s/step
+on time step 127005 (time=2540.1), 0.00220366 s/step
+on time step 128901 (time=2578.02), 0.00211002 s/step
+field decay(t = 2600.26): 0.002084598947669294 / 2.0898336466122664 = 0.000997495159984883
+on time step 130805 (time=2616.1), 0.00210184 s/step
+on time step 132716 (time=2654.32), 0.00209335 s/step
+on time step 134614 (time=2692.28), 0.00210832 s/step
+on time step 136519 (time=2730.38), 0.00209991 s/step
+on time step 138406 (time=2768.12), 0.00212101 s/step
+field decay(t = 2800.28): 0.0007253432892285443 / 2.0898336466122664 = 0.0003470818313239262
+on time step 140276 (time=2805.52), 0.00213909 s/step
+on time step 142166 (time=2843.32), 0.00211718 s/step
+on time step 144050 (time=2881), 0.00212428 s/step
+on time step 145943 (time=2918.86), 0.00211323 s/step
+on time step 147840 (time=2956.8), 0.00210898 s/step
+on time step 149728 (time=2994.56), 0.00211865 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+field decay(t = 3000.3): 0.0002524004043831076 / 2.0898336466122664 = 0.0001207753568291248
+run 0 finished at t = 3000.3 (150015 timesteps)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000198841 s
+Working in 2D dimensions.
+Computational cell is 28 x 28.48 x 0 with resolution 25
+     cylinder, center = (0,0,0)
+          radius 8.4955, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (2.09967,2.09967,2.09967)
+     cylinder, center = (0,0,0)
+          radius 7.5045, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,9.241,0)
+          size (1e+20,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (0,-9.241,0)
+          size (1e+20,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 1.06063 s
+-----------
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+Meep: using complex fields.
+MPB solved for frequency_1(0.931628,0,0) = 0.687985 after 14 iters
+MPB solved for frequency_1(0.868513,0,0) = 0.645138 after 7 iters
+MPB solved for frequency_1(0.868547,0,0) = 0.645161 after 3 iters
+MPB solved for frequency_1(0.868547,0,0) = 0.645161 after 1 iters
+on time step 1875 (time=37.5), 0.00213339 s/step
+on time step 3695 (time=73.9), 0.00219845 s/step
+on time step 5570 (time=111.4), 0.00213408 s/step
+on time step 7457 (time=149.14), 0.00212042 s/step
+on time step 9348 (time=186.96), 0.00211661 s/step
+field decay(t = 200.02): 1.0564316452397089e-07 / 1.0564316452397089e-07 = 1.0
+on time step 11242 (time=224.84), 0.0021122 s/step
+on time step 13128 (time=262.56), 0.00212121 s/step
+on time step 15017 (time=300.34), 0.00211767 s/step
+on time step 16907 (time=338.14), 0.00211651 s/step
+on time step 18796 (time=375.92), 0.00211836 s/step
+field decay(t = 400.04): 0.0001912844094135611 / 0.0001912844094135611 = 1.0
+on time step 20621 (time=412.42), 0.00219205 s/step
+on time step 22503 (time=450.06), 0.00212571 s/step
+on time step 24378 (time=487.56), 0.00213447 s/step
+on time step 26271 (time=525.42), 0.00211404 s/step
+on time step 28157 (time=563.14), 0.00212146 s/step
+field decay(t = 600.0600000000001): 0.04106798158097758 / 0.04106798158097758 = 1.0
+on time step 30045 (time=600.9), 0.00211929 s/step
+on time step 31925 (time=638.5), 0.0021291 s/step
+on time step 33700 (time=674), 0.00225352 s/step
+on time step 35584 (time=711.68), 0.00212315 s/step
+on time step 37468 (time=749.36), 0.00212359 s/step
+on time step 39364 (time=787.28), 0.00211036 s/step
+field decay(t = 800.08): 1.059010612687639 / 1.059010612687639 = 1.0
+on time step 41249 (time=824.98), 0.00212299 s/step
+on time step 43142 (time=862.84), 0.00211332 s/step
+on time step 45026 (time=900.52), 0.0021238 s/step
+on time step 46905 (time=938.1), 0.00212924 s/step
+on time step 48768 (time=975.36), 0.00214767 s/step
+field decay(t = 1000.1): 3.4366250596973402 / 3.4366250596973402 = 1.0
+on time step 50650 (time=1013), 0.00212587 s/step
+on time step 52531 (time=1050.62), 0.0021272 s/step
+on time step 54406 (time=1088.12), 0.00213382 s/step
+on time step 56280 (time=1125.6), 0.00213531 s/step
+on time step 58156 (time=1163.12), 0.0021327 s/step
+field decay(t = 1200.1200000000001): 3.463509791859092 / 3.463509791859092 = 1.0
+on time step 60049 (time=1200.98), 0.00211387 s/step
+on time step 61902 (time=1238.04), 0.00215909 s/step
+on time step 63790 (time=1275.8), 0.00211967 s/step
+on time step 65672 (time=1313.44), 0.00212631 s/step
+on time step 67557 (time=1351.14), 0.00212223 s/step
+on time step 69427 (time=1388.54), 0.00213981 s/step
+field decay(t = 1400.14): 1.57739523227121 / 3.463509791859092 = 0.4554325892130707
+on time step 71276 (time=1425.52), 0.00216353 s/step
+on time step 73128 (time=1462.56), 0.00216095 s/step
+on time step 74969 (time=1499.38), 0.00217292 s/step
+on time step 76842 (time=1536.84), 0.0021359 s/step
+on time step 78718 (time=1574.36), 0.00213321 s/step
+field decay(t = 1600.16): 0.09979772460404139 / 3.463509791859092 = 0.028814044308064
+on time step 80596 (time=1611.92), 0.00213037 s/step
+on time step 82468 (time=1649.36), 0.00213677 s/step
+on time step 84351 (time=1687.02), 0.00212427 s/step
+on time step 86230 (time=1724.6), 0.00212911 s/step
+on time step 88083 (time=1761.66), 0.00215885 s/step
+on time step 89805 (time=1796.1), 0.00232297 s/step
+field decay(t = 1800.18): 0.0004560003020739295 / 3.463509791859092 = 0.00013165844171878733
+on time step 91657 (time=1833.14), 0.00216006 s/step
+on time step 93524 (time=1870.48), 0.00214352 s/step
+on time step 95390 (time=1907.8), 0.00214458 s/step
+on time step 97259 (time=1945.18), 0.00214048 s/step
+on time step 99152 (time=1983.04), 0.0021133 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+field decay(t = 2000.2): 0.00033814518385037344 / 3.463509791859092 = 9.763078615951273e-05
+run 0 finished at t = 2000.2 (100010 timesteps)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000198126 s
+Working in 2D dimensions.
+Computational cell is 28 x 28.48 x 0 with resolution 25
+     cylinder, center = (0,0,0)
+          radius 8.4955, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     cylinder, center = (0,0,0)
+          radius 7.5045, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,9.241,0)
+          size (1e+20,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (0,-9.241,0)
+          size (1e+20,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 1.05015 s
+-----------
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+Meep: using complex fields.
+MPB solved for frequency_1(0.931927,0,0) = 0.688187 after 14 iters
+MPB solved for frequency_1(0.868817,0,0) = 0.645345 after 7 iters
+MPB solved for frequency_1(0.868851,0,0) = 0.645368 after 3 iters
+MPB solved for frequency_1(0.868851,0,0) = 0.645368 after 1 iters
+Meep progress: 37.22/1500.0 = 2.5% done in 4.0s, 157.2s to go
+on time step 1861 (time=37.22), 0.0021499 s/step
+Meep progress: 74.9/1500.0 = 5.0% done in 8.0s, 152.3s to go
+on time step 3745 (time=74.9), 0.00212363 s/step
+Meep progress: 112.56/1500.0 = 7.5% done in 12.0s, 148.0s to go
+on time step 5628 (time=112.56), 0.00212474 s/step
+Meep progress: 150.26/1500.0 = 10.0% done in 16.0s, 143.8s to go
+on time step 7513 (time=150.26), 0.00212317 s/step
+Meep progress: 188.02/1500.0 = 12.5% done in 20.0s, 139.6s to go
+on time step 9401 (time=188.02), 0.00211883 s/step
+Meep progress: 225.52/1500.0 = 15.0% done in 24.0s, 135.7s to go
+on time step 11276 (time=225.52), 0.00213392 s/step
+Meep progress: 262.88/1500.0 = 17.5% done in 28.0s, 131.8s to go
+on time step 13144 (time=262.88), 0.00214155 s/step
+Meep progress: 300.56/1500.0 = 20.0% done in 32.0s, 127.7s to go
+on time step 15028 (time=300.56), 0.00212352 s/step
+Meep progress: 337.06/1500.0 = 22.5% done in 36.0s, 124.2s to go
+on time step 16853 (time=337.06), 0.00219228 s/step
+Meep progress: 372.44/1500.0 = 24.8% done in 40.0s, 121.1s to go
+on time step 18623 (time=372.46), 0.00226092 s/step
+Meep progress: 410.1/1500.0 = 27.3% done in 44.0s, 117.0s to go
+on time step 20506 (time=410.12), 0.00212531 s/step
+Meep progress: 447.5/1500.0 = 29.8% done in 48.0s, 112.9s to go
+on time step 22376 (time=447.52), 0.00213941 s/step
+Meep progress: 485.02/1500.0 = 32.3% done in 52.0s, 108.8s to go
+on time step 24252 (time=485.04), 0.0021325 s/step
+Meep progress: 522.24/1500.0 = 34.8% done in 56.0s, 104.9s to go
+on time step 26113 (time=522.26), 0.00214963 s/step
+Meep progress: 559.5600000000001/1500.0 = 37.3% done in 60.0s, 100.9s to go
+on time step 27980 (time=559.6), 0.00214356 s/step
+Meep progress: 597.32/1500.0 = 39.8% done in 64.0s, 96.7s to go
+on time step 29868 (time=597.36), 0.00211961 s/step
+Meep progress: 634.82/1500.0 = 42.3% done in 68.0s, 92.7s to go
+on time step 31743 (time=634.86), 0.00213351 s/step
+Meep progress: 672.74/1500.0 = 44.8% done in 72.0s, 88.6s to go
+on time step 33639 (time=672.78), 0.00211009 s/step
+Meep progress: 710.26/1500.0 = 47.4% done in 76.0s, 84.5s to go
+on time step 35515 (time=710.3), 0.00213289 s/step
+Meep progress: 747.86/1500.0 = 49.9% done in 80.0s, 80.5s to go
+on time step 37395 (time=747.9), 0.00212795 s/step
+Meep progress: 785.26/1500.0 = 52.4% done in 84.0s, 76.5s to go
+on time step 39265 (time=785.3), 0.00213998 s/step
+Meep progress: 822.8000000000001/1500.0 = 54.9% done in 88.0s, 72.4s to go
+on time step 41142 (time=822.84), 0.0021312 s/step
+Meep progress: 860.32/1500.0 = 57.4% done in 92.0s, 68.4s to go
+on time step 43018 (time=860.36), 0.00213269 s/step
+Meep progress: 898.12/1500.0 = 59.9% done in 96.0s, 64.4s to go
+on time step 44908 (time=898.16), 0.00211749 s/step
+Meep progress: 935.14/1500.0 = 62.3% done in 100.0s, 60.4s to go
+on time step 46759 (time=935.18), 0.00216123 s/step
+Meep progress: 972.8000000000001/1500.0 = 64.9% done in 104.0s, 56.4s to go
+on time step 48642 (time=972.84), 0.00212459 s/step
+Meep progress: 1010.64/1500.0 = 67.4% done in 108.0s, 52.3s to go
+on time step 50534 (time=1010.68), 0.00211429 s/step
+Meep progress: 1048.42/1500.0 = 69.9% done in 112.0s, 48.3s to go
+on time step 52423 (time=1048.46), 0.00211775 s/step
+Meep progress: 1085.82/1500.0 = 72.4% done in 116.0s, 44.3s to go
+on time step 54293 (time=1085.86), 0.00213949 s/step
+Meep progress: 1123.44/1500.0 = 74.9% done in 120.0s, 40.2s to go
+on time step 56175 (time=1123.5), 0.00212648 s/step
+Meep progress: 1161.02/1500.0 = 77.4% done in 124.0s, 36.2s to go
+on time step 58054 (time=1161.08), 0.00212935 s/step
+Meep progress: 1197.18/1500.0 = 79.8% done in 128.0s, 32.4s to go
+on time step 59862 (time=1197.24), 0.00221314 s/step
+Meep progress: 1234.3600000000001/1500.0 = 82.3% done in 132.0s, 28.4s to go
+on time step 61721 (time=1234.42), 0.00215235 s/step
+Meep progress: 1271.92/1500.0 = 84.8% done in 136.0s, 24.4s to go
+on time step 63599 (time=1271.98), 0.00213041 s/step
+Meep progress: 1309.34/1500.0 = 87.3% done in 140.0s, 20.4s to go
+on time step 65470 (time=1309.4), 0.0021387 s/step
+Meep progress: 1347.1000000000001/1500.0 = 89.8% done in 144.0s, 16.3s to go
+on time step 67358 (time=1347.16), 0.00211875 s/step
+Meep progress: 1384.78/1500.0 = 92.3% done in 148.0s, 12.3s to go
+on time step 69242 (time=1384.84), 0.00212416 s/step
+Meep progress: 1422.3600000000001/1500.0 = 94.8% done in 152.0s, 8.3s to go
+on time step 71121 (time=1422.42), 0.00212972 s/step
+Meep progress: 1459.8/1500.0 = 97.3% done in 156.0s, 4.3s to go
+on time step 72993 (time=1459.86), 0.00213745 s/step
+Meep progress: 1495.0/1500.0 = 99.7% done in 160.0s, 0.5s to go
+on time step 74754 (time=1495.08), 0.00227245 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 1500.0 (75000 timesteps)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.00019002 s
+Working in 2D dimensions.
+Computational cell is 28 x 28.48 x 0 with resolution 25
+     cylinder, center = (0,0,0)
+          radius 8.4955, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (2.09967,2.09967,2.09967)
+     cylinder, center = (0,0,0)
+          radius 7.5045, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,9.241,0)
+          size (1e+20,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (0,-9.241,0)
+          size (1e+20,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 1.05527 s
+-----------
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+Meep: using complex fields.
+MPB solved for frequency_1(0.931927,0,0) = 0.688187 after 14 iters
+MPB solved for frequency_1(0.868817,0,0) = 0.645345 after 7 iters
+MPB solved for frequency_1(0.868851,0,0) = 0.645368 after 3 iters
+MPB solved for frequency_1(0.868851,0,0) = 0.645368 after 1 iters
+Meep progress: 38.04/1500.0 = 2.5% done in 4.0s, 153.7s to go
+on time step 1902 (time=38.04), 0.00210309 s/step
+Meep progress: 76.62/1500.0 = 5.1% done in 8.0s, 148.6s to go
+on time step 3831 (time=76.62), 0.00207367 s/step
+Meep progress: 115.06/1500.0 = 7.7% done in 12.0s, 144.5s to go
+on time step 5753 (time=115.06), 0.00208201 s/step
+Meep progress: 153.56/1500.0 = 10.2% done in 16.0s, 140.3s to go
+on time step 7678 (time=153.56), 0.00207867 s/step
+Meep progress: 192.0/1500.0 = 12.8% done in 20.0s, 136.3s to go
+on time step 9600 (time=192), 0.00208151 s/step
+Meep progress: 230.16/1500.0 = 15.3% done in 24.0s, 132.4s to go
+on time step 11508 (time=230.16), 0.00209687 s/step
+Meep progress: 268.32/1500.0 = 17.9% done in 28.0s, 128.6s to go
+on time step 13416 (time=268.32), 0.00209723 s/step
+Meep progress: 306.68/1500.0 = 20.4% done in 32.0s, 124.6s to go
+on time step 15334 (time=306.68), 0.00208619 s/step
+Meep progress: 345.04/1500.0 = 23.0% done in 36.0s, 120.5s to go
+on time step 17252 (time=345.04), 0.002086 s/step
+Meep progress: 383.56/1500.0 = 25.6% done in 40.0s, 116.5s to go
+on time step 19178 (time=383.56), 0.00207762 s/step
+Meep progress: 421.64/1500.0 = 28.1% done in 44.0s, 112.6s to go
+on time step 21082 (time=421.64), 0.00210145 s/step
+Meep progress: 460.26/1500.0 = 30.7% done in 48.0s, 108.5s to go
+on time step 23013 (time=460.26), 0.00207225 s/step
+Meep progress: 498.86/1500.0 = 33.3% done in 52.0s, 104.4s to go
+on time step 24944 (time=498.88), 0.00207241 s/step
+Meep progress: 537.46/1500.0 = 35.8% done in 56.0s, 100.3s to go
+on time step 26874 (time=537.48), 0.00207314 s/step
+Meep progress: 575.3000000000001/1500.0 = 38.4% done in 60.0s, 96.5s to go
+on time step 28766 (time=575.32), 0.00211487 s/step
+Meep progress: 613.46/1500.0 = 40.9% done in 64.0s, 92.5s to go
+on time step 30674 (time=613.48), 0.00209712 s/step
+Meep progress: 651.5600000000001/1500.0 = 43.4% done in 68.0s, 88.6s to go
+on time step 32579 (time=651.58), 0.00210045 s/step
+Meep progress: 689.7/1500.0 = 46.0% done in 72.0s, 84.6s to go
+on time step 34486 (time=689.72), 0.0020981 s/step
+Meep progress: 727.76/1500.0 = 48.5% done in 76.0s, 80.7s to go
+on time step 36389 (time=727.78), 0.00210234 s/step
+Meep progress: 766.02/1500.0 = 51.1% done in 80.0s, 76.7s to go
+on time step 38302 (time=766.04), 0.0020915 s/step
+Meep progress: 804.44/1500.0 = 53.6% done in 84.0s, 72.7s to go
+on time step 40224 (time=804.48), 0.00208213 s/step
+Meep progress: 842.78/1500.0 = 56.2% done in 88.0s, 68.6s to go
+on time step 42141 (time=842.82), 0.00208744 s/step
+Meep progress: 880.72/1500.0 = 58.7% done in 92.0s, 64.7s to go
+on time step 44038 (time=880.76), 0.00210861 s/step
+Meep progress: 918.78/1500.0 = 61.3% done in 96.0s, 60.7s to go
+on time step 45941 (time=918.82), 0.00210203 s/step
+Meep progress: 957.36/1500.0 = 63.8% done in 100.0s, 56.7s to go
+on time step 47870 (time=957.4), 0.00207414 s/step
+Meep progress: 995.82/1500.0 = 66.4% done in 104.0s, 52.7s to go
+on time step 49793 (time=995.86), 0.00208032 s/step
+Meep progress: 1034.34/1500.0 = 69.0% done in 108.0s, 48.6s to go
+on time step 51719 (time=1034.38), 0.00207702 s/step
+Meep progress: 1072.8600000000001/1500.0 = 71.5% done in 112.0s, 44.6s to go
+on time step 53644 (time=1072.88), 0.00207795 s/step
+Meep progress: 1111.38/1500.0 = 74.1% done in 116.0s, 40.6s to go
+on time step 55570 (time=1111.4), 0.0020773 s/step
+Meep progress: 1148.16/1500.0 = 76.5% done in 120.0s, 36.8s to go
+on time step 57409 (time=1148.18), 0.00217522 s/step
+Meep progress: 1186.48/1500.0 = 79.1% done in 124.0s, 32.8s to go
+on time step 59326 (time=1186.52), 0.0020873 s/step
+Meep progress: 1224.94/1500.0 = 81.7% done in 128.0s, 28.7s to go
+on time step 61249 (time=1224.98), 0.00208046 s/step
+Meep progress: 1263.44/1500.0 = 84.2% done in 132.0s, 24.7s to go
+on time step 63174 (time=1263.48), 0.00207802 s/step
+Meep progress: 1300.56/1500.0 = 86.7% done in 136.0s, 20.9s to go
+on time step 65030 (time=1300.6), 0.00215531 s/step
+Meep progress: 1338.5/1500.0 = 89.2% done in 140.0s, 16.9s to go
+on time step 66927 (time=1338.54), 0.00210881 s/step
+Meep progress: 1376.6200000000001/1500.0 = 91.8% done in 144.0s, 12.9s to go
+on time step 68834 (time=1376.68), 0.00209849 s/step
+Meep progress: 1414.64/1500.0 = 94.3% done in 148.0s, 8.9s to go
+on time step 70735 (time=1414.7), 0.00210497 s/step
+Meep progress: 1452.68/1500.0 = 96.8% done in 152.0s, 5.0s to go
+on time step 72637 (time=1452.74), 0.00210308 s/step
+Meep progress: 1490.78/1500.0 = 99.4% done in 156.0s, 1.0s to go
+on time step 74542 (time=1490.84), 0.00210007 s/step
+run 0 finished at t = 1500.0 (75000 timesteps)
+E1: line 1549.50 nm  drop 0.598 -> 0.0260 (13.6 dB), through 0.313 -> 0.971
+
+Elapsed run time = 1064.1930 s

@@ -1,0 +1,32 @@
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000266075 s
+Working in 2D dimensions.
+Computational cell is 60.6 x 13 x 0 with resolution 25
+subpixel-averaging is 41.7804% done, 5.60652 s remaining
+subpixel-averaging is 84.4023% done, 0.741977 s remaining
+subpixel-averaging is 43.7433% done, 5.14884 s remaining
+subpixel-averaging is 86.0848% done, 0.650089 s remaining
+subpixel-averaging is 45.9865% done, 4.72657 s remaining
+subpixel-averaging is 90.8517% done, 0.404565 s remaining
+time for set_epsilon = 38.4041 s
+-----------
+MPB solved for frequency_1(0.931628,0,0) = 0.68756 after 14 iters
+MPB solved for frequency_1(0.869046,0,0) = 0.645153 after 7 iters
+MPB solved for frequency_1(0.869059,0,0) = 0.645161 after 3 iters
+field decay(t = 60.02): 1.0456560775593213e-16 / 1.0456560775593213e-16 = 1.0
+on time step 3213 (time=64.26), 0.00124525 s/step
+field decay(t = 120.04): 0.0018809021197324777 / 0.0018809021197324777 = 1.0
+on time step 6328 (time=126.56), 0.00128442 s/step
+field decay(t = 180.06): 2.6448547267171025 / 2.6448547267171025 = 1.0
+on time step 9527 (time=190.54), 0.00125059 s/step
+field decay(t = 240.08): 0.6198413653933259 / 2.6448547267171025 = 0.23435743337128287
+on time step 12671 (time=253.42), 0.00127272 s/step
+field decay(t = 300.1): 1.5872874092977102e-07 / 2.6448547267171025 = 6.001416233805452e-08
+on time step 15767 (time=315.34), 0.00129203 s/step
+field decay(t = 360.12): 7.764221969296304e-09 / 2.6448547267171025 = 2.935594870623976e-09
+run 0 finished at t = 360.12 (18006 timesteps)
+[compact mzi LC=5.8 dL=0.3003] s(1550) = +0.4285  T = 0.9787  node len 52.6 um
+
+Elapsed run time = 61.3875 s

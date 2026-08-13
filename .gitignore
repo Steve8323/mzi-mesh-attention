@@ -1,2 +1,3 @@
 __pycache__/
 *.pyc
+out/snap_*frames.npz

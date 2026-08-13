@@ -1,0 +1,382 @@
+{
+ "loop": 1,
+ "purpose": "baseline + error attribution + scaling",
+ "attribution_120fs": {
+  "full": {
+   "N": 5,
+   "T0_fs": 120.0,
+   "fwhm_fs": 199.81310667784743,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.006838867511668419,
+   "bits": 7.192026844137255,
+   "isi_leak": 4.3643298715801416e-08,
+   "isi_leak_win": 0.0006048122122921636,
+   "broadening": 0.9959306639520981,
+   "walkoff_fs": 10.93209653640182,
+   "score_rms": {},
+   "density_xB300": 578.6869429989606
+  },
+  "components": {
+   "screen": {
+    "rms_err": 0.007068287478850039,
+    "isi_leak": 4.494769480799198e-08,
+    "err_var_explained": -0.06821833689296009,
+    "isi_explained": -0.029887660432924568
+   },
+   "kappa_disp": {
+    "rms_err": 0.006576167935770063,
+    "isi_leak": 8.264783710954327e-08,
+    "err_var_explained": 0.07534992348632741,
+    "isi_explained": -0.893711968193182
+   },
+   "guide_disp": {
+    "rms_err": 0.006838615819607207,
+    "isi_leak": 4.364068073832739e-08,
+    "err_var_explained": 7.360500236297529e-05,
+    "isi_explained": 5.9985783638305534e-05
+   },
+   "loss": {
+    "rms_err": 0.002054697897134445,
+    "isi_leak": 3.0644646502692316e-08,
+    "err_var_explained": 0.9097332986173505,
+    "isi_explained": 0.29783844474622245
+   }
+  }
+ },
+ "attribution_10fs": {
+  "full": {
+   "N": 5,
+   "T0_fs": 9.86,
+   "fwhm_fs": 16.4179769320298,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.13231679883330788,
+   "bits": 2.917931858252063,
+   "isi_leak": 2.0899827965517937e-09,
+   "isi_leak_win": 2.1619132530192012e-07,
+   "broadening": 0.9136326638842165,
+   "walkoff_fs": 10.93209653640182,
+   "score_rms": {},
+   "density_xB300": 578.6869429989606
+  },
+  "components": {
+   "screen": {
+    "rms_err": 0.1623046948389539,
+    "isi_leak": 2.758611806954842e-09,
+    "err_var_explained": -0.5046385831947422,
+    "isi_explained": -0.31992082016474077
+   },
+   "kappa_disp": {
+    "rms_err": 0.09021649361613993,
+    "isi_leak": 1.6310595063515692e-09,
+    "err_var_explained": 0.5351188715989584,
+    "isi_explained": 0.21958232907820563
+   },
+   "guide_disp": {
+    "rms_err": 0.13000774376780197,
+    "isi_leak": 2.0774450350673098e-09,
+    "err_var_explained": 0.03459738253574096,
+    "isi_explained": 0.0059989783194243085
+   },
+   "loss": {
+    "rms_err": 0.1314518840656929,
+    "isi_leak": 3.409629046156039e-09,
+    "err_var_explained": 0.013030664775912304,
+    "isi_explained": -0.6314148861806392
+   }
+  }
+ },
+ "T0_sweep": [
+  {
+   "N": 5,
+   "T0_fs": 9.86,
+   "fwhm_fs": 16.4179769320298,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.13231679883330788,
+   "bits": 2.917931858252063,
+   "isi_leak": 2.0899827965517937e-09,
+   "isi_leak_win": 2.1619132530192012e-07,
+   "broadening": 0.9136326638842165,
+   "walkoff_fs": 10.93209653640182,
+   "score_rms": {
+    "1": 4.741671374778744e-06,
+    "4": 4.510384605655591e-06
+   },
+   "density_xB300": 578.6869429989606
+  },
+  {
+   "N": 5,
+   "T0_fs": 30.000000000000004,
+   "fwhm_fs": 49.953276669461864,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.036429391640880215,
+   "bits": 4.77875328703588,
+   "isi_leak": 6.1325958795344495e-09,
+   "isi_leak_win": 1.1991708182775115e-07,
+   "broadening": 0.9809166338422675,
+   "walkoff_fs": 10.93209653640182,
+   "score_rms": {
+    "1": 5.374320225433089e-06,
+    "4": 4.906257649842337e-06
+   },
+   "density_xB300": 578.6869429989606
+  },
+  {
+   "N": 5,
+   "T0_fs": 60.00000000000001,
+   "fwhm_fs": 99.90655333892373,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.011617522334825098,
+   "bits": 6.427553771325017,
+   "isi_leak": 2.1441209808865617e-08,
+   "isi_leak_win": 1.1490440532818688e-07,
+   "broadening": 0.9909259872488211,
+   "walkoff_fs": 10.93209653640182,
+   "score_rms": {
+    "1": 6.898209120268107e-06,
+    "4": 6.2674283754240734e-06
+   },
+   "density_xB300": 578.6869429989606
+  },
+  {
+   "N": 5,
+   "T0_fs": 90.00000000000001,
+   "fwhm_fs": 149.85983000838561,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.007670384235754058,
+   "bits": 7.026485435599795,
+   "isi_leak": 4.333970599394559e-08,
+   "isi_leak_win": 1.5294577662852126e-05,
+   "broadening": 0.9942624383843391,
+   "walkoff_fs": 10.93209653640182,
+   "score_rms": {
+    "1": 0.0001608013749794473,
+    "4": 0.00014609626650011548
+   },
+   "density_xB300": 578.6869429989606
+  },
+  {
+   "N": 5,
+   "T0_fs": 120.00000000000001,
+   "fwhm_fs": 199.81310667784746,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.006838867511668441,
+   "bits": 7.19202684413725,
+   "isi_leak": 4.364329852575196e-08,
+   "isi_leak_win": 0.0006048122122921651,
+   "broadening": 0.995930663952098,
+   "walkoff_fs": 10.93209653640182,
+   "score_rms": {
+    "1": 0.005025453518254293,
+    "4": 0.00452555346856675
+   },
+   "density_xB300": 578.6869429989606
+  },
+  {
+   "N": 5,
+   "T0_fs": 150.00000000000003,
+   "fwhm_fs": 249.7663833473093,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.007522690877525931,
+   "bits": 7.054535476314989,
+   "isi_leak": 4.810281702783447e-06,
+   "isi_leak_win": 0.003558662190801312,
+   "broadening": 0.9889241165675104,
+   "walkoff_fs": 10.93209653640182,
+   "score_rms": {
+    "1": 0.025109631115556367,
+    "4": 0.022357439825048356
+   },
+   "density_xB300": 578.6869429989606
+  },
+  {
+   "N": 5,
+   "T0_fs": 180.00000000000003,
+   "fwhm_fs": 299.71966001677123,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.027042718975263537,
+   "bits": 5.208615976951839,
+   "isi_leak": 0.00016375257472887056,
+   "isi_leak_win": 0.009752911432374065,
+   "broadening": 0.9775801827067494,
+   "walkoff_fs": 10.93209653640182,
+   "score_rms": {
+    "1": 0.06330641777861032,
+    "4": 0.055377039341638935
+   },
+   "density_xB300": 578.6869429989606
+  }
+ ],
+ "N_sweep": [
+  {
+   "N": 3,
+   "T0_fs": 120.0,
+   "fwhm_fs": 199.81310667784743,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.005053796914271681,
+   "bits": 7.628416593600596,
+   "isi_leak": 3.1150103931384823e-08,
+   "isi_leak_win": 0.0010876139994607454,
+   "broadening": 0.9959306639520981,
+   "walkoff_fs": 6.559257921841092,
+   "score_rms": {},
+   "density_xB300": 383.26998007253053
+  },
+  {
+   "N": 5,
+   "T0_fs": 120.0,
+   "fwhm_fs": 199.81310667784743,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.006838867511668419,
+   "bits": 7.192026844137255,
+   "isi_leak": 4.3643298715801416e-08,
+   "isi_leak_win": 0.0006048122122921636,
+   "broadening": 0.9959306639520981,
+   "walkoff_fs": 10.93209653640182,
+   "score_rms": {},
+   "density_xB300": 578.6869429989606
+  },
+  {
+   "N": 8,
+   "T0_fs": 120.0,
+   "fwhm_fs": 199.81310667784743,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.007412593223920814,
+   "bits": 7.075805940943746,
+   "isi_leak": 1.5738835391002045e-07,
+   "isi_leak_win": 0.00040123309983495196,
+   "broadening": 0.9959306639520981,
+   "walkoff_fs": 17.491354458242913,
+   "score_rms": {},
+   "density_xB300": 700.8130846807078
+  },
+  {
+   "N": 16,
+   "T0_fs": 120.0,
+   "fwhm_fs": 199.81310667784743,
+   "slot_fs": 501.26,
+   "prechirp_fs2": 0.0,
+   "flags": {
+    "screen": true,
+    "kappa": true,
+    "guide": true,
+    "loss": true
+   },
+   "rms_err": 0.036011641710496624,
+   "bits": 4.795392818694086,
+   "isi_leak": 4.5365605645898983e-07,
+   "isi_leak_win": 0.000207123193078493,
+   "broadening": 0.9959306639520981,
+   "walkoff_fs": 34.98270891648583,
+   "score_rms": {},
+   "density_xB300": 779.4684284871579
+  }
+ ],
+ "fast_slot": {
+  "N": 5,
+  "T0_fs": 60.0,
+  "fwhm_fs": 99.90655333892371,
+  "slot_fs": 250.63,
+  "prechirp_fs2": 0.0,
+  "flags": {
+   "screen": true,
+   "kappa": true,
+   "guide": true,
+   "loss": true
+  },
+  "rms_err": 0.01141088121828483,
+  "bits": 6.45344598007992,
+  "isi_leak": 1.0731993826182173e-07,
+  "isi_leak_win": 0.0005825483356093566,
+  "broadening": 0.9909259872488212,
+  "walkoff_fs": 10.93209653640182,
+  "score_rms": {
+   "1": 0.00499610402110016,
+   "4": 0.004522849866537917
+  },
+  "density_xB300": 1375.4219960119958
+ }
+}
