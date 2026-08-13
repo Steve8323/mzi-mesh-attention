@@ -108,8 +108,10 @@ for side in (+1,-1):
             hseg(min(tx, cpx) - 1.0, max(tx, cpx) + 1.0, yj, w=1.5),
             vseg(yj - OV, (ya+yb)/2, cpx, w=4.0),
             rect(cpx-PAD/2, cpx+PAD/2, ya, yb)]
-conductors["SUB"] = [rect(LTOT+100, LTOT+180, -92.0-PAD, -92.0)]
-for k,v in gnd.items(): conductors[k] = [v]
+# user directive: strictly one layer, ONE electrode per element —
+# no counter-strips, no substrate contact. (Field closes to distant
+# conductors; actuation correspondingly weaker — recorded, not relitigated.)
+gnd.clear()
 
 # verify
 from scipy.spatial import cKDTree
