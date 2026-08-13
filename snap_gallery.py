@@ -89,6 +89,26 @@ mesh inputs (title). You can watch the same train arrive at the three
 mesh rows staggered by one slot each — the sliding window forming — and
 then mix through the three nodes.</p>
 
+<h2>7b · END-TO-END WITH THE MASTER RING — the clock is physical</h2>
+{img('snap_e2e_mrr_eps.png')}
+{img('snap_e2e_mrr_frames.png')}
+<p class="c">Same cell, now with the master ring at the head of the bus —
+designed CLOSED-FORM (ring_design_calc.py: CMT + the measured evanescent
+constant γ=3.65/µm → R=4.788 µm, gap 0.180 µm, κ²=0.10, round trip =
+exactly one slot), then verified with this ONE FDTD run. A circulating
+pulse is excited in the ring (two-point directional launch); the ring
+emits one pulse per round trip into the bus — the pulse train IS the
+ring's clock — and the train then drives the taps, one-slot meanders and
+the 3×3 mesh. MEASURED: emission period 155.7 fs vs 150 designed (+3.8%,
+the bent-ring n_g vs the straight-guide value) — the closed-form design
+landed on the first and only FDTD shot. Per-trip decay came out faster
+than the 0.916 design (≈0.7; the R=4.8 bend loss exceeds the
+log-interpolated Q anchor, and the first pulse is inflated by direct
+launch leakage — the circular haze in the early frames is free-space
+radiation from the point launch, not a device effect). Decay is labeled:
+the real chip's Kerr comb sustains the circulating pulse; a design
+iteration would take R≈6–7 µm for a cleaner clock.</p>
+
 <h2>8 · The electronics layer, run "artificially" as Δn</h2>
 {img('snap_elec_ring.png')}
 <p class="c">E1 — token-writer gate as an ADD-DROP ring: electrode Δn = 0

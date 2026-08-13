@@ -28,6 +28,8 @@ calibrations, copied verbatim into `calib/` (see Provenance).
 | **compute density vs B300** | B300 die = 4.5e12 MAC/s/mm² (15 PFLOPS dense FP4 / 1650 mm²). Compact node (52.6 µm, 4 µm pitch, FDTD-recalibrated, geometric θ, screen only +0.10°/nm): **N=5 → 579×, N=32 → 802×** at 5–7 bits; 4 THz slot → 2184×, WDM d=10 + demux → 1623× (caveats in report §8). Honest accounting: mesh + delay coils + ring + tree + demux, ×1.15 routing; writer DACs/PDs off-die; energy NOT audited |
 | **optimization campaign (4 loops + critic)** | OPTIMIZATION.md: "noise" = coupler fab disorder > control errors > slot-overlap ISI (cliff at FWHM > 0.4·slot) > node dispersion > guide dispersion (nil). κ-aware per-node compile **+1.0 bit** (char ≤5 mrad); comb ≤1 MHz fine; receiver two-way tie at **5.8±0.1 bits** (N=5, full error model); honest Pareto: optical-out 579–2079×, **electronic readout 23–142×**. Trajectory 7.2→5.8 bits as the model got honest |
 | **end-to-end + electronics MEEP** | one 1550 bus → taps → arc-length-solved meander delays → 3×3 mesh in ONE cell (delays measured 0.92/1.79 slots); add-drop token gate **13.6 dB** via Δn; heater trim tracks calibrated curve within 0.04; single-line FWM shown, comb self-start honestly NOT (needs Q~1e8 regime) |
+| **MRR-in-the-loop e2e** | clock ring designed CLOSED-FORM (ring_design_calc.py: CMT + measured γ=3.65/µm → R=4.788, gap 0.180, κ²=0.10, round trip = 1 slot) and verified with ONE FDTD: ring emits one pulse/trip into the bus → taps → delays → mesh, all in one cell |
+| **amplitude perfection** | bits are amplitude-FLAT (A=0.1→0.97 identical at N=5/8/16); per-level spread ≤0.2 bit; score head flat 1.1e-5 across 2 decades of \|product\|, FDTD-bounded at 1e-4 (amp_metrics.py, fig10) |
 
 ## Layout
 

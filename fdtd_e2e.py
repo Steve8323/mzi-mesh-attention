@@ -17,12 +17,23 @@ out/e2e_timing.json (measured per-channel delays + output record).
 """
 import json
 import os
+import sys
 
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import meep as mp
+
+# 'mrr' mode: the master ring IS the pulse source — a circulating pulse is
+# excited in a ring whose ROUND TRIP equals one slot (designed closed-form
+# in ring_design_calc.py: R=4.788 um, gap 0.180, kappa^2=0.10, per-trip
+# amplitude 0.916); it emits one pulse per trip into the bus, and the
+# decaying-clock train (labeled: the real chip's comb gain sustains it)
+# drives the taps -> delays -> mesh chain.
+MRR = "mrr" in sys.argv
+R_RING_D = 4.7879
+GAP_RING = 0.1803
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FIG, OUT = os.path.join(HERE, "fig"), os.path.join(HERE, "out")
@@ -239,6 +250,12 @@ xl = gx - X0                                  # layout x per column
 # bus (up to bend start)
 bus_cols = (xl >= 0) & (xl <= X_BUSBEND[0])
 wgt[np.ix_(bus_cols, np.abs(gy - Y_BUS) <= W / 2)] = 1.0
+# master ring (mrr mode): annulus below the bus at the head of the chain
+RING_C = (11.0, Y_BUS - (GAP_RING + W + R_RING_D))
+if MRR:
+    XX, YY = np.meshgrid(xl, gy, indexing="ij")
+    rr = np.hypot(XX - RING_C[0], YY - RING_C[1])
+    wgt[np.abs(rr - R_RING_D) <= W / 2] = 1.0
 # channels
 for k in range(3):
     yk = np.array([y_channel(k, x) if 0 <= x <= LTOT else np.nan
@@ -257,21 +274,42 @@ sim = mp.Simulation(cell_size=mp.Vector3(sx, sy), resolution=RES,
                                        material=mgrid)],
                     default_material=mp.Medium(index=1.0),
                     eps_averaging=False)
-sim.sources = [mp.EigenModeSource(
-    mp.CustomSource(train, start_time=0, end_time=T_END_SRC,
-                    center_frequency=FCEN),
-    center=mp.Vector3(-LTOT / 2 + 3.0, Y_BUS - Y_CENTER),
-    size=mp.Vector3(0, 2.8),
-    eig_band=1, eig_parity=mp.ODD_Z, eig_match_freq=True)]
+if MRR:
+    # two-point directional excitation on the ring's bottom arc: the
+    # right point leads by 90 deg -> launches -x there -> CLOCKWISE
+    # circulation -> +x at the top coupling point -> train exits right.
+    # lambda_g/4 = 0.30 um spacing (n_eff = 1.2905).
+    cx = RING_C[0] - LTOT / 2          # layout x -> meep cell x
+    src_t = mp.GaussianSource(FCEN, width=3.8)
+    sim.sources = [
+        mp.Source(src_t, component=mp.Ez,
+                  center=mp.Vector3(cx - 0.150, RING_C[1] - R_RING_D
+                                    - Y_CENTER)),
+        mp.Source(src_t, component=mp.Ez, amplitude=np.exp(1j * np.pi / 2),
+                  center=mp.Vector3(cx + 0.150, RING_C[1] - R_RING_D
+                                    - Y_CENTER)),
+    ]
+else:
+    sim.sources = [mp.EigenModeSource(
+        mp.CustomSource(train, start_time=0, end_time=T_END_SRC,
+                        center_frequency=FCEN),
+        center=mp.Vector3(-LTOT / 2 + 3.0, Y_BUS - Y_CENTER),
+        size=mp.Vector3(0, 2.8),
+        eig_band=1, eig_parity=mp.ODD_Z, eig_match_freq=True)]
 
 x_in = X_MESH - 2.0 - LTOT / 2
 x_out = X_MESH + 3 * L_NODE + 2.0 - LTOT / 2
-rec = {"t": [], "in": [[], [], []], "out": [[], [], []]}
+x_bus = 18.5 - LTOT / 2                      # bus probe after the ring
+rec = {"t": [], "in": [[], [], []], "out": [[], [], []], "bus": []}
 ys_probe = np.linspace(-1.0, 1.0, 9)
 
 
 def grab_ts(sim):
     rec["t"].append(sim.meep_time())
+    if MRR:
+        rec["bus"].append(sum(abs(sim.get_field_point(
+            mp.Ez, mp.Vector3(x_bus, Y_BUS - Y_CENTER + y))) ** 2
+            for y in ys_probe))
     for i in range(3):
         rec["in"][i].append(sum(abs(sim.get_field_point(
             mp.Ez, mp.Vector3(x_in, ROWS_M[i] - Y_CENTER + y))) ** 2
@@ -292,17 +330,23 @@ def grab_frame(sim):
 
 
 sim.init_sim()
+SUF = "_mrr" if MRR else ""
 eps = np.real(sim.get_epsilon())
 fig, ax = plt.subplots(figsize=(14, 3.6), dpi=150)
 ax.imshow(eps.T, cmap="Greys", origin="lower", aspect="equal",
           interpolation="nearest")
-ax.set_title("END-TO-END geometry (eps): one 1550 nm bus -> 2 taps + bus "
-             "bend -> one-slot meander delays (solved to "
-             f"{L_SLOT:.1f} um/slot) -> 3x3 compact mesh", fontsize=10)
+ttl = ("END-TO-END + MASTER RING (eps): clock MRR (R=4.79 um, round trip "
+       "= 1 slot, CMT-designed gap 0.18) -> bus -> taps -> one-slot "
+       "meander delays -> 3x3 mesh" if MRR else
+       "END-TO-END geometry (eps): one 1550 nm bus -> 2 taps + bus bend "
+       f"-> one-slot meander delays (solved to {L_SLOT:.1f} um/slot) -> "
+       "3x3 compact mesh")
+ax.set_title(ttl, fontsize=10)
 ax.set_xticks([])
 ax.set_yticks([])
 fig.tight_layout()
-fig.savefig(os.path.join(FIG, "snap_e2e_eps.png"), bbox_inches="tight")
+fig.savefig(os.path.join(FIG, f"snap_e2e{SUF}_eps.png"),
+            bbox_inches="tight")
 plt.close(fig)
 
 T_RUN = T_END_SRC + (LTOT * NSIL) + 80
@@ -321,13 +365,33 @@ for i in range(3):
     meas.append(float(t_arr[jwin][np.argmax(tr[jwin])]))
 d_slots = [(m - meas[0]) / SLOT for m in meas]
 print("measured input delays (slots):", [round(d, 3) for d in d_slots])
+period_fs = None
+if MRR and rec["bus"]:
+    # measured clock: spacing of successive emitted-pulse peaks on the bus
+    tr = np.array(rec["bus"])
+    pk = []
+    for k in range(4):
+        w = (t_arr > t_arr[np.argmax(tr > 0.3 * tr.max())]
+             + (k - 0.5) * SLOT) & \
+            (t_arr <= t_arr[np.argmax(tr > 0.3 * tr.max())]
+             + (k + 0.5) * SLOT)
+        if w.any() and tr[w].max() > 1e-4 * tr.max():
+            pk.append(float(t_arr[w][np.argmax(tr[w])]))
+    if len(pk) >= 2:
+        period_fs = float(np.mean(np.diff(pk)) * T_UNIT_FS)
+        amps = [float(np.sqrt(tr[np.argmin(abs(t_arr - p))] / tr.max()))
+                for p in pk]
+        print(f"measured ring emission period: {period_fs:.1f} fs "
+              f"(design {SLOT_FS:.0f}); relative pulse amplitudes:",
+              [round(a, 3) for a in amps])
 json.dump({"slot_fs": SLOT_FS, "L_slot_um": L_SLOT,
            "bump_amps": {str(k): v for k, v in AMP.items()},
            "path_deltas_um": deltas,
            "measured_delays_slots": d_slots,
-           "t": rec["t"],
+           "ring_emission_period_fs": period_fs,
+           "t": rec["t"], "bus": rec["bus"],
            "inputs": rec["in"], "outputs": rec["out"]},
-          open(os.path.join(OUT, "e2e_timing.json"), "w"))
+          open(os.path.join(OUT, f"e2e{SUF}_timing.json"), "w"))
 
 picks = np.linspace(1, len(frames) - 1, 7).astype(int)
 vmax = max(frames[k].max() for k in picks)
@@ -339,14 +403,22 @@ for ax, k in zip(np.atleast_1d(axs), picks):
     ax.set_title(f"t = {ftimes[k]*T_UNIT_FS:.0f} fs", fontsize=8)
     ax.set_xticks([])
     ax.set_yticks([])
-fig.suptitle("END-TO-END |Ez|: single 1550 input -> split -> one-slot "
-             "meander delays -> 3x3 mesh (delays measured: "
-             + ", ".join(f"{d:.2f}" for d in d_slots) + " slots)",
-             fontsize=10)
+sup = ("END-TO-END + RING |Ez|: the clock MRR emits one pulse per round "
+       "trip (measured period "
+       + (f"{period_fs:.0f} fs" if period_fs else "n/a")
+       + f", design {SLOT_FS:.0f}) -> split -> delays -> mesh; input "
+       "delays measured: "
+       + ", ".join(f"{d:.2f}" for d in d_slots) + " slots"
+       ) if MRR else (
+       "END-TO-END |Ez|: single 1550 input -> split -> one-slot "
+       "meander delays -> 3x3 mesh (delays measured: "
+       + ", ".join(f"{d:.2f}" for d in d_slots) + " slots)")
+fig.suptitle(sup, fontsize=10)
 fig.tight_layout()
-fig.savefig(os.path.join(FIG, "snap_e2e_frames.png"), bbox_inches="tight")
+fig.savefig(os.path.join(FIG, f"snap_e2e{SUF}_frames.png"),
+            bbox_inches="tight")
 plt.close(fig)
-np.savez_compressed(os.path.join(OUT, "snap_e2e_frames.npz"),
+np.savez_compressed(os.path.join(OUT, f"snap_e2e{SUF}_frames.npz"),
                     frames=np.array(frames, dtype=np.float32),
                     times=np.array(ftimes))
 print("e2e done")

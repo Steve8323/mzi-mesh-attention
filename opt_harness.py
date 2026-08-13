@@ -108,7 +108,7 @@ def run_config(N=5, T0=120e-15, slot_fs=501.26, prechirp_fs2=0.0,
                ceo_jitter_rms=0.0, seed_err=None, receiver="peak",
                gate_fs=250.0, sample_offset_fs=0.0, filter_kind=None,
                filter_thz=2.21, kappa_aware=False, kappa_char_rms=0.0,
-               comb_linewidth_hz=0.0):
+               comb_linewidth_hz=0.0, amp_scale=0.97, return_arrays=False):
     """Error terms (critic-2 structure):
       phase_set_rms [rad]  per-node theta/phi LUT error (iid)
       kappa_sigma  [rad]   per-node coupler fab disorder, applied EXACTLY
@@ -219,7 +219,7 @@ def run_config(N=5, T0=120e-15, slot_fs=501.26, prechirp_fs2=0.0,
             return S
 
         # ---- bits: random tokens ------------------------------------
-        tokens = rng.uniform(-0.97, 0.97, n_tokens)
+        tokens = rng.uniform(-amp_scale, amp_scale, n_tokens)
         # per-pulse comb phase noise: random walk along the train,
         # sigma_slot = sqrt(2 pi linewidth T_slot) (critic-3 HIGH-2;
         # NOT trimmable, unlike the deleted static term)
@@ -317,6 +317,9 @@ def run_config(N=5, T0=120e-15, slot_fs=501.26, prechirp_fs2=0.0,
                 + (N - 1) * 250e-6) * 1.15
         dens = N ** 2 * otdm.FSR / area / B300_DENS
 
+        if return_arrays:
+            return {"tokens": tokens, "S": S / g, "ref": ref,
+                    "S_rowgain": S_r, "g": g}
         return {"N": N, "T0_fs": T0 * 1e15,
                 "fwhm_fs": 2 * np.sqrt(np.log(2)) * T0 * 1e15,
                 "slot_fs": slot_fs, "prechirp_fs2": prechirp_fs2,

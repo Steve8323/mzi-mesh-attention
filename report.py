@@ -327,6 +327,21 @@ residual-risk statement are in <code>OPTIMIZATION.md</code>. Trajectory:
 7.2 bits (loop 1, naive) &rarr; 5.8&plusmn;0.1 (loop 4, honest) &mdash;
 the number fell every time the model told fewer lies.</p>
 
+<h2>10 &middot; How perfect, per amplitude</h2>
+{img('fig10_amplitude.png')}
+<p>The system is strictly linear in field amplitude, so the meaningful
+question is where the ADDITIVE floors bite. Measured (full loop-4 error
+spec, &kappa;-aware compile): <b>relative accuracy is amplitude-flat</b>
+&mdash; bits are identical for token scales A = 0.1 &hellip; 0.97 at every
+N (5.77/5.22/4.27 for N=5/8/16), because the dominant errors (coupler
+disorder, phase set, trim) are multiplicative and the crosstalk floor
+scales with the ensemble. Binned per amplitude LEVEL, slots whose window
+averages small |tokens| lose &le;0.2 bit to the additive floor (5.6 vs
+5.8) &mdash; the ADC-style answer. The score head is flat at ~1.1e-5
+relative across two decades of |product| under the full error model; the
+real-FDTD residuals bound the hardware floor at ~1e-4 (grid-limited).
+Data: <code>out/amp_metrics.json</code>, <code>amp_metrics.py</code>.</p>
+
 <h2>Methods &amp; caveats</h2>
 <ul>
 <li>2D slab physics throughout, inherited from the silica repo; no
