@@ -46,6 +46,51 @@ if fsc:
                       f"{fsc['rms_rel']*100:.1f}%</b> on token products"
                       f"</td><td>fdtd_score.py</td></tr>")
 
+dens = jload("density.json")
+cc = jload("compact_cal.json")
+density_html = ""
+if dens and cc:
+    drows = "".join(
+        f"<tr><td>{r['name']}</td><td>{r['area_mm2']:.3f}</td>"
+        f"<td>{r['MACs']:.2e}</td><td>{r['density']:.2e}</td>"
+        f"<td><b>{r['x_B300']:.0f}&times;</b></td><td>{r['bits']:.1f}</td>"
+        f"<td>{r.get('notes','')}</td></tr>" for r in dens["rows"])
+    density_html = f"""
+<p>Baseline: B300 = 15 PFLOPS dense FP4 = 7.5&times;10<sup>15</sup> MAC/s
+on ~1650 mm&sup2; of dual-die silicon &rarr;
+<b>4.5&times;10<sup>12</sup> MAC/s/mm&sup2;</b> (die-level; the SXM module
+is much larger, so this denominator is conservative AGAINST us).
+Our density = slot rate / node footprint &mdash; both MACs and mesh area
+scale as N&sup2;, so the levers are the node, the slot, and WDM.</p>
+<p><b>The compact node</b> (FDTD-recalibrated, not assumed): port pitch
+6&rarr;4 &mu;m (edge gap 3 &mu;m: extrapolated L<sub>&pi;</sub>&asymp;0.4 m
+&rarr; &lt;1% crosstalk over a mesh), s-bends 14&rarr;8 &mu;m (min bend
+radius 9.7 &mu;m; node T {cc['node_T_1550']:.3f} vs 0.983 original
+&mdash; the tighter bends cost 0.8% and the cross state is cleaner,
+s&#8320;={cc['s0_meas_1550']:.4f}), and the 24 &mu;m phase arm replaced by
+a 6 &mu;m trim stub &mdash; a fixed-weight mesh sets &theta;
+<i>geometrically</i> (arm-length offset; validated in FDTD:
+&delta;L=0.30 &mu;m &rarr; s = {cc['geo_phase_s_meas']:+.3f} measured vs
+{cc['geo_phase_s_pred']:+.3f} predicted). Node: 96.7&rarr;
+{cc['node_len_um']:.1f} &mu;m, footprint
+{96.7*6:.0f}&rarr;{cc['node_len_um']*4:.0f} &mu;m&sup2;
+({96.7*6/(cc['node_len_um']*4):.1f}&times;). Compact-node quadrature
+phase screen: {cc['screen_deg_per_nm']:+.2f}&deg;/nm (vs &minus;0.25 for
+the original), folded into the accuracy column.</p>
+<table><tr><th>config</th><th>die area (mm&sup2;)</th><th>MAC/s</th>
+<th>MAC/s/mm&sup2;</th><th>&times;B300</th><th>bits</th><th>notes</th></tr>
+{drows}</table>
+<p>Accounting: mesh + delay-ladder coils + master ring/electrodes +
+splitter tree + (for WDM-mixer) an echelle demux per output port, all
+&times;1.15 routing overhead. NOT counted: token-writer electronics
+(&le;1 GHz DACs, flip-chip &mdash; the B300 die also excludes its HBM) and
+photodetectors. Precision: FP4 has 4-bit operands but FP32 accumulate;
+our accumulate is analog and included in the bits column &mdash; the
+6-plus-bit configs are at-or-above FP4 operand precision, below FP32
+accumulation. Energy is NOT audited here (B300: 0.19 pJ/FLOP; an honest
+optical energy audit needs the comb power budget and is the known risk
+&mdash; flagged, not claimed).</p>"""
+
 sweep_rows = "".join(
     f"<tr><td>{r['fwhm_fs']:.0f} fs</td><td>{r['err_vs_ideal']:.4f}</td>"
     f"<td>{r['bits_vs_ideal']:.1f}</td>"
@@ -246,6 +291,10 @@ token products recovered to <b>relative rms
 insertion loss stays mild (2.3 dB at N=32). A 10-bit phase DAC matches
 the infinite-resolution floor. Throughput is N&sup2; MACs per 501 fs
 slot.</p>
+
+<h2>8 &middot; Compute density: the compact node vs a B300</h2>
+{img('fig8_density.png')}
+{density_html}
 
 <h2>Methods &amp; caveats</h2>
 <ul>

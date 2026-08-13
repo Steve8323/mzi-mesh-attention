@@ -345,6 +345,53 @@ def fig_scaling():
     plt.close(fig)
 
 
+# ------------------------------------------------------------- fig 8 -----
+def fig_density():
+    d = jload("density.json")
+    cc = jload("compact_cal.json")
+    if not (d and cc):
+        print("  density fig skipped")
+        return False
+    fig, axs = plt.subplots(1, 2, figsize=(10.5, 3.6), dpi=150,
+                            gridspec_kw={"width_ratios": [1.6, 1]})
+    ax = axs[0]
+    rows = d["rows"]
+    ys = np.arange(len(rows))[::-1]
+    ax.axvspan(100, 1000, color=C["green"], alpha=0.12)
+    ax.text(310, len(rows) - 0.45, "target band", fontsize=8,
+            color=C["green"], ha="center")
+    for y, r in zip(ys, rows):
+        col = C["blue"] if r["d_wdm"] == 1 else C["purple"]
+        ax.barh(y, r["x_B300"], height=0.62, color=col, alpha=0.9)
+        ax.text(r["x_B300"] * 1.12, y,
+                f"{r['x_B300']:.0f}×  ({r['bits']:.1f} b)",
+                va="center", fontsize=8)
+    ax.set_yticks(ys)
+    ax.set_yticklabels([r["name"] for r in rows], fontsize=8)
+    ax.set_xscale("log")
+    ax.set_xlim(30, 3e4)
+    ax.set_xlabel("compute density vs B300 die (MAC/s/mm², die-level)")
+    ax.set_title("B300 = 7.5e15 MAC/s dense-FP4 ÷ 1650 mm² = "
+                 "4.5e12 MAC/s/mm²", fontsize=9)
+    ax = axs[1]
+    labels = ["original\n96.7 µm", f"compact\n{cc['node_len_um']:.1f} µm"]
+    Ls = [96.7 * 6, cc["node_len_um"] * 4]
+    ax.bar([0, 1], Ls, 0.55, color=[C["grey"], C["blue"]])
+    for i, v in enumerate(Ls):
+        ax.text(i, v * 1.02, f"{v:.0f} µm²/node", ha="center", fontsize=8.5)
+    ax.set_xticks([0, 1])
+    ax.set_xticklabels(labels, fontsize=8.5)
+    ax.set_ylabel("node footprint (µm²)")
+    ax.set_title(f"node shrink {96.7*6/(cc['node_len_um']*4):.1f}× — "
+                 f"T={cc['node_T_1550']:.3f}/node,\n"
+                 f"geometric θ validated (s {cc['geo_phase_s_meas']:+.3f} "
+                 f"vs {cc['geo_phase_s_pred']:+.3f})", fontsize=9)
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIG, "fig8_density.png"), bbox_inches="tight")
+    plt.close(fig)
+    return True
+
+
 if __name__ == "__main__":
     fig_schematic()
     fig_node_cal()
@@ -353,4 +400,5 @@ if __name__ == "__main__":
     fig_attention()
     ok = fig_fdtd()
     fig_scaling()
-    print("figs written", "(fdtd pending)" if not ok else "")
+    ok2 = fig_density()
+    print("figs written", "(fdtd pending)" if not (ok and ok2) else "")

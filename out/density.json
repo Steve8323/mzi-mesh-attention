@@ -1,0 +1,82 @@
+{
+ "B300_density": 4545454545454.546,
+ "rows": [
+  {
+   "name": "original node, N=5",
+   "N": 5,
+   "d_wdm": 1,
+   "area_mm2": 0.03259837755286414,
+   "MACs": 49874463516325.71,
+   "density": 1529967662821417.5,
+   "x_B300": 336.59288582071184,
+   "bits": 6.6,
+   "notes": ""
+  },
+  {
+   "name": "compact node, N=5",
+   "N": 5,
+   "d_wdm": 1,
+   "area_mm2": 0.018960751701909428,
+   "MACs": 49874463516325.71,
+   "density": 2630405392171405.5,
+   "x_B300": 578.6891862777092,
+   "bits": 6.722577529855435,
+   "notes": ""
+  },
+  {
+   "name": "compact, N=16",
+   "N": 16,
+   "d_wdm": 1,
+   "area_mm2": 0.1441452804229131,
+   "MACs": 510714506407175.25,
+   "density": 3543053958539407.5,
+   "x_B300": 779.4718708786696,
+   "bits": 5.722577529855435,
+   "notes": ""
+  },
+  {
+   "name": "compact, N=32",
+   "N": 32,
+   "d_wdm": 1,
+   "area_mm2": 0.5606124244147076,
+   "MACs": 2042858025628701.0,
+   "density": 3643975653521222.5,
+   "x_B300": 801.6746437746689,
+   "bits": 5.122577529855436,
+   "notes": ""
+  },
+  {
+   "name": "compact, N=32, 4 THz slot",
+   "N": 32,
+   "d_wdm": 1,
+   "area_mm2": 0.4115209822073538,
+   "MACs": 4085716051257402.0,
+   "density": 9928329849287552.0,
+   "x_B300": 2184.2325668432613,
+   "bits": 5.088411818709925,
+   "notes": "R=8 ring: comb threshold unproven at this Q"
+  },
+  {
+   "name": "compact, N=32, WDM d=10 + demux",
+   "N": 32,
+   "d_wdm": 10,
+   "area_mm2": 2.7686124244147075,
+   "MACs": 2.042858025628701e+16,
+   "density": 7378634898890071.0,
+   "x_B300": 1623.2996777558155,
+   "bits": 5.122577529855436,
+   "notes": "per-lambda U differs (lambda-locked head family); echelle demux per port included"
+  },
+  {
+   "name": "score engine, N=32 lags, d=10 comb",
+   "N": 32,
+   "d_wdm": 10,
+   "area_mm2": 0.31659576441470766,
+   "MACs": 618443347602438.8,
+   "density": 1953416365963576.2,
+   "x_B300": 429.75160051198674,
+   "bits": 17.9,
+   "notes": "QK^T band only, no mesh; bits = model floor (detector noise not audited)"
+  }
+ ]
+}

@@ -25,6 +25,7 @@ calibrations, copied verbatim into `calib/` (see Provenance).
 | full attention | photonic scores + electronic softmax = float attention to rms 2.5e-6; EO pace (0.1–1 GHz) frames the loop, ~2000 slots |
 | FDTD checks | coherent 2-input node: rms 0.0043 @1550 after static phase cal (κ unchanged, LP_eff 23.70→23.88); score head on real pulse trains: token products to **rms 1e-4** |
 | scaling | 6.8 bits (N=5) → 4.0 bits (N=32), loss 2.3 dB at N=32, 10-bit phase DACs suffice; N² MACs / 501 fs slot |
+| **compute density vs B300** | B300 die = 4.5e12 MAC/s/mm² (15 PFLOPS dense FP4 / 1650 mm²). Compact node (52.6 µm, 4 µm pitch, FDTD-recalibrated, geometric θ, screen only +0.10°/nm): **N=5 → 579×, N=32 → 802×** at 5–7 bits; 4 THz slot → 2184×, WDM d=10 + demux → 1623× (caveats in report §8). Honest accounting: mesh + delay coils + ring + tree + demux, ×1.15 routing; writer DACs/PDs off-die; energy NOT audited |
 
 ## Layout
 
@@ -43,6 +44,10 @@ fdtd_coupler2.py   MEEP: single-coupler two-input control (localizes the
 node2_joint.py     joint recalibration: staircase + both 2-input runs
 fdtd_score.py      MEEP: score head on real pulse trains (scale model,
                    150 fs slots, labeled)
+fdtd_compact.py    MEEP: compact node (52.6 µm) — coupler sweep, geometric
+                   theta, quadrature screen
+compact_cal.py     assembles the compact calibration + OTDM accuracy
+density.py         compute-density audit vs B300 (out/density.json)
 figs.py report.py  figures + self-contained report.html
 calib/             copied FDTD calibration JSONs (provenance below)
 ```
@@ -60,6 +65,11 @@ $PY fdtd_node2.py 0 0.7 90            # set-point dependence control
 $PY fdtd_coupler2.py 90               # launch/coupler control
 $PY node2_joint.py                    # joint recalibration
 $PY fdtd_score.py                     # MEEP, 3 sub-runs
+for LC in 5.35 7 8.5; do $PY fdtd_compact.py coupler $LC; done
+$PY fdtd_compact.py mzi 5.8 0         # compact cross state
+$PY fdtd_compact.py mzi 5.8 0.3003    # geometric theta = pi/2
+$PY fdtd_compact.py mzi2 5.8 0        # compact quadrature screen
+$PY compact_cal.py && $PY density.py
 $PY figs.py && $PY report.py
 ```
 
