@@ -1,0 +1,10 @@
+{
+ "px_per_um": 20,
+ "nm_per_px": 50.0,
+ "tone": "WHITE = SiO2 kept",
+ "source": "exact MEEP MaterialGrid of fdtd_e2e mrr",
+ "die_um": [
+  505.8,
+  140.0
+ ]
+}

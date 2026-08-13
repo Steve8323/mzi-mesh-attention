@@ -1,0 +1,610 @@
+== E1 static T(gap)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000233889 s
+Working in 2D dimensions.
+Computational cell is 38 x 10 x 0 with resolution 25
+     block, center = (-7,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.217968 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 107.54/500.0 = 21.5% done in 4.0s, 14.6s to go
+on time step 5377 (time=107.54), 0.00074404 s/step
+Meep progress: 215.6/500.0 = 43.1% done in 8.0s, 10.6s to go
+on time step 10780 (time=215.6), 0.000740395 s/step
+Meep progress: 320.96/500.0 = 64.2% done in 12.0s, 6.7s to go
+on time step 16049 (time=320.98), 0.000759263 s/step
+Meep progress: 424.54/500.0 = 84.9% done in 16.0s, 2.8s to go
+on time step 21228 (time=424.56), 0.000772459 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 500.0 (25000 timesteps)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000228882 s
+Working in 2D dimensions.
+Computational cell is 38.16 x 10 x 0 with resolution 25
+     block, center = (-7.075,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.075,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.224374 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 123.9/500.0 = 24.8% done in 4.0s, 12.1s to go
+on time step 6195 (time=123.9), 0.000645721 s/step
+Meep progress: 246.6/500.0 = 49.3% done in 8.0s, 8.2s to go
+on time step 12330 (time=246.6), 0.000652018 s/step
+Meep progress: 377.64/500.0 = 75.5% done in 12.0s, 3.9s to go
+on time step 18882 (time=377.64), 0.000610509 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 500.0 (25000 timesteps)
+  gap 0.15 um  T = 0.9152
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000169992 s
+Working in 2D dimensions.
+Computational cell is 38.2 x 10 x 0 with resolution 25
+     block, center = (-7.1,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.1,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.21034 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 139.16/500.0 = 27.8% done in 4.0s, 10.4s to go
+on time step 6958 (time=139.16), 0.000574899 s/step
+Meep progress: 276.32/500.0 = 55.3% done in 8.0s, 6.5s to go
+on time step 13816 (time=276.32), 0.000583347 s/step
+Meep progress: 404.24/500.0 = 80.8% done in 12.0s, 2.8s to go
+on time step 20212 (time=404.24), 0.000625408 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 500.0 (25000 timesteps)
+  gap 0.20 um  T = 0.8851
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000169039 s
+Working in 2D dimensions.
+Computational cell is 38.24 x 10 x 0 with resolution 25
+     block, center = (-7.125,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.125,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.217342 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 126.64/500.0 = 25.3% done in 4.0s, 11.8s to go
+on time step 6332 (time=126.64), 0.000631783 s/step
+Meep progress: 256.24/500.0 = 51.2% done in 8.0s, 7.6s to go
+on time step 12813 (time=256.26), 0.000617292 s/step
+Meep progress: 387.44/500.0 = 77.5% done in 12.0s, 3.5s to go
+on time step 19374 (time=387.48), 0.000609741 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 500.0 (25000 timesteps)
+  gap 0.25 um  T = 0.8669
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.00019598 s
+Working in 2D dimensions.
+Computational cell is 38.28 x 10 x 0 with resolution 25
+     block, center = (-7.15,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.15,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.216098 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 130.52/500.0 = 26.1% done in 4.0s, 11.3s to go
+on time step 6526 (time=130.52), 0.000612973 s/step
+Meep progress: 262.24/500.0 = 52.4% done in 8.0s, 7.3s to go
+on time step 13112 (time=262.24), 0.000607411 s/step
+Meep progress: 395.76/500.0 = 79.2% done in 12.0s, 3.2s to go
+on time step 19788 (time=395.76), 0.000599174 s/step
+run 0 finished at t = 500.0 (25000 timesteps)
+  gap 0.30 um  T = 0.8495
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000178099 s
+Working in 2D dimensions.
+Computational cell is 38.4 x 10 x 0 with resolution 25
+     block, center = (-7.2,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.2,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.211567 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 131.44/500.0 = 26.3% done in 4.0s, 11.2s to go
+on time step 6572 (time=131.44), 0.000608725 s/step
+Meep progress: 266.38/500.0 = 53.3% done in 8.0s, 7.0s to go
+on time step 13319 (time=266.38), 0.000592877 s/step
+Meep progress: 402.5/500.0 = 80.5% done in 12.0s, 2.9s to go
+on time step 20125 (time=402.5), 0.000587735 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 500.0 (25000 timesteps)
+  gap 0.40 um  T = 0.8322
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000174046 s
+Working in 2D dimensions.
+Computational cell is 38.52 x 10 x 0 with resolution 25
+     block, center = (-7.25,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.25,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.204349 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 134.62/500.0 = 26.9% done in 4.0s, 10.9s to go
+on time step 6731 (time=134.62), 0.000594317 s/step
+Meep progress: 269.44/500.0 = 53.9% done in 8.0s, 6.8s to go
+on time step 13472 (time=269.44), 0.000593429 s/step
+Meep progress: 406.78000000000003/500.0 = 81.4% done in 12.0s, 2.8s to go
+on time step 20339 (time=406.78), 0.000582557 s/step
+run 0 finished at t = 500.0 (25000 timesteps)
+  gap 0.50 um  T = 0.8262
+== E2 knee T(I) at bias gap
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000169992 s
+Working in 2D dimensions.
+Computational cell is 38 x 10 x 0 with resolution 25
+     block, center = (-7,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.195894 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 143.76/700.0 = 20.5% done in 4.0s, 15.5s to go
+on time step 7188 (time=143.76), 0.000556559 s/step
+Meep progress: 287.96/700.0 = 41.1% done in 8.0s, 11.4s to go
+on time step 14398 (time=287.96), 0.000554823 s/step
+Meep progress: 424.84000000000003/700.0 = 60.7% done in 12.0s, 7.8s to go
+on time step 21242 (time=424.84), 0.00058446 s/step
+Meep progress: 568.1800000000001/700.0 = 81.2% done in 16.0s, 3.7s to go
+on time step 28409 (time=568.18), 0.000558115 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 700.0 (35000 timesteps)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000179052 s
+Working in 2D dimensions.
+Computational cell is 38.28 x 10 x 0 with resolution 25
+     block, center = (-7.15,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.15,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.197698 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 119.56/700.0 = 17.1% done in 4.0s, 19.4s to go
+on time step 5978 (time=119.56), 0.000669217 s/step
+Meep progress: 238.4/700.0 = 34.1% done in 8.0s, 15.5s to go
+on time step 11920 (time=238.4), 0.000673189 s/step
+Meep progress: 358.90000000000003/700.0 = 51.3% done in 12.0s, 11.4s to go
+on time step 17946 (time=358.92), 0.000663893 s/step
+Meep progress: 480.64/700.0 = 68.7% done in 16.0s, 7.3s to go
+on time step 24033 (time=480.66), 0.000657226 s/step
+Meep progress: 599.24/700.0 = 85.6% done in 20.0s, 3.4s to go
+on time step 29963 (time=599.26), 0.000674609 s/step
+run 0 finished at t = 700.0 (35000 timesteps)
+  A/A_avg 0.50  T = 0.9306
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000164032 s
+Working in 2D dimensions.
+Computational cell is 38 x 10 x 0 with resolution 25
+     block, center = (-7,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.195578 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 144.08/700.0 = 20.6% done in 4.0s, 15.4s to go
+on time step 7204 (time=144.08), 0.000555332 s/step
+Meep progress: 290.96/700.0 = 41.6% done in 8.0s, 11.2s to go
+on time step 14548 (time=290.96), 0.000544679 s/step
+Meep progress: 434.18/700.0 = 62.0% done in 12.0s, 7.3s to go
+on time step 21711 (time=434.22), 0.000558455 s/step
+Meep progress: 578.8000000000001/700.0 = 82.7% done in 16.0s, 3.4s to go
+on time step 28942 (time=578.84), 0.000553177 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 700.0 (35000 timesteps)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000150919 s
+Working in 2D dimensions.
+Computational cell is 38.28 x 10 x 0 with resolution 25
+     block, center = (-7.15,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.15,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.196059 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 102.08/700.0 = 14.6% done in 4.0s, 23.4s to go
+on time step 5104 (time=102.08), 0.000783842 s/step
+Meep progress: 205.0/700.0 = 29.3% done in 8.0s, 19.3s to go
+on time step 10251 (time=205.02), 0.000777304 s/step
+Meep progress: 308.0/700.0 = 44.0% done in 12.0s, 15.3s to go
+on time step 15401 (time=308.02), 0.000776794 s/step
+Meep progress: 411.28000000000003/700.0 = 58.8% done in 16.0s, 11.2s to go
+on time step 20566 (time=411.32), 0.00077448 s/step
+Meep progress: 513.3/700.0 = 73.3% done in 20.0s, 7.3s to go
+on time step 25667 (time=513.34), 0.000784233 s/step
+Meep progress: 616.7/700.0 = 88.1% done in 24.0s, 3.2s to go
+on time step 30838 (time=616.76), 0.000773564 s/step
+run 0 finished at t = 700.0 (35000 timesteps)
+  A/A_avg 0.75  T = 0.7913
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.0001688 s
+Working in 2D dimensions.
+Computational cell is 38 x 10 x 0 with resolution 25
+     block, center = (-7,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.194958 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 142.62/700.0 = 20.4% done in 4.0s, 15.6s to go
+on time step 7131 (time=142.62), 0.000561001 s/step
+Meep progress: 286.62/700.0 = 40.9% done in 8.0s, 11.5s to go
+on time step 14331 (time=286.62), 0.000555601 s/step
+Meep progress: 433.04/700.0 = 61.9% done in 12.0s, 7.4s to go
+on time step 21652 (time=433.04), 0.000546441 s/step
+Meep progress: 577.4/700.0 = 82.5% done in 16.0s, 3.4s to go
+on time step 28872 (time=577.44), 0.000554066 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 700.0 (35000 timesteps)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.00018692 s
+Working in 2D dimensions.
+Computational cell is 38.28 x 10 x 0 with resolution 25
+     block, center = (-7.15,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.15,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.197422 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 90.82000000000001/700.0 = 13.0% done in 4.0s, 26.8s to go
+on time step 4541 (time=90.82), 0.000880951 s/step
+Meep progress: 182.26/700.0 = 26.0% done in 8.0s, 22.7s to go
+on time step 9113 (time=182.26), 0.000875017 s/step
+Meep progress: 273.8/700.0 = 39.1% done in 12.0s, 18.7s to go
+on time step 13690 (time=273.8), 0.000874008 s/step
+Meep progress: 365.56/700.0 = 52.2% done in 16.0s, 14.6s to go
+on time step 18279 (time=365.58), 0.000871825 s/step
+Meep progress: 456.92/700.0 = 65.3% done in 20.0s, 10.6s to go
+on time step 22846 (time=456.92), 0.000875849 s/step
+Meep progress: 548.0600000000001/700.0 = 78.3% done in 24.0s, 6.7s to go
+on time step 27404 (time=548.08), 0.000877726 s/step
+Meep progress: 640.02/700.0 = 91.4% done in 28.0s, 2.6s to go
+on time step 32002 (time=640.04), 0.000870103 s/step
+run 0 finished at t = 700.0 (35000 timesteps)
+  A/A_avg 1.00  T = 0.6511
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000163078 s
+Working in 2D dimensions.
+Computational cell is 38 x 10 x 0 with resolution 25
+     block, center = (-7,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.196698 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 141.0/700.0 = 20.1% done in 4.0s, 15.9s to go
+on time step 7050 (time=141), 0.000567417 s/step
+Meep progress: 283.36/700.0 = 40.5% done in 8.0s, 11.8s to go
+on time step 14168 (time=283.36), 0.000561993 s/step
+Meep progress: 426.14/700.0 = 60.9% done in 12.0s, 7.7s to go
+on time step 21307 (time=426.14), 0.000560319 s/step
+Meep progress: 569.26/700.0 = 81.3% done in 16.0s, 3.7s to go
+on time step 28464 (time=569.28), 0.000558961 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 700.0 (35000 timesteps)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000157833 s
+Working in 2D dimensions.
+Computational cell is 38.28 x 10 x 0 with resolution 25
+     block, center = (-7.15,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.15,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.197082 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 112.9/700.0 = 16.1% done in 4.0s, 20.8s to go
+on time step 5645 (time=112.9), 0.000708621 s/step
+Meep progress: 225.28/700.0 = 32.2% done in 8.0s, 16.9s to go
+on time step 11264 (time=225.28), 0.000711882 s/step
+Meep progress: 338.76/700.0 = 48.4% done in 12.0s, 12.8s to go
+on time step 16938 (time=338.76), 0.000705024 s/step
+Meep progress: 451.7/700.0 = 64.5% done in 16.0s, 8.8s to go
+on time step 22585 (time=451.7), 0.000708364 s/step
+Meep progress: 565.22/700.0 = 80.7% done in 20.0s, 4.8s to go
+on time step 28262 (time=565.24), 0.000704699 s/step
+Meep progress: 678.1/700.0 = 96.9% done in 24.0s, 0.8s to go
+on time step 33906 (time=678.12), 0.000708813 s/step
+run 0 finished at t = 700.0 (35000 timesteps)
+  A/A_avg 1.25  T = 0.5989
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000152111 s
+Working in 2D dimensions.
+Computational cell is 38 x 10 x 0 with resolution 25
+     block, center = (-7,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.194887 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 144.06/700.0 = 20.6% done in 4.0s, 15.4s to go
+on time step 7203 (time=144.06), 0.000555335 s/step
+Meep progress: 290.78000000000003/700.0 = 41.5% done in 8.0s, 11.3s to go
+on time step 14540 (time=290.8), 0.000545248 s/step
+Meep progress: 436.98/700.0 = 62.4% done in 12.0s, 7.2s to go
+on time step 21850 (time=437), 0.000547244 s/step
+Meep progress: 582.94/700.0 = 83.3% done in 16.0s, 3.2s to go
+on time step 29148 (time=582.96), 0.000548109 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 700.0 (35000 timesteps)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.00018096 s
+Working in 2D dimensions.
+Computational cell is 38.28 x 10 x 0 with resolution 25
+     block, center = (-7.15,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.15,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.207515 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 110.98/700.0 = 15.9% done in 4.0s, 21.2s to go
+on time step 5549 (time=110.98), 0.000720992 s/step
+Meep progress: 223.88/700.0 = 32.0% done in 8.0s, 17.0s to go
+on time step 11195 (time=223.9), 0.00070858 s/step
+Meep progress: 337.08/700.0 = 48.2% done in 12.0s, 12.9s to go
+on time step 16855 (time=337.1), 0.000706797 s/step
+Meep progress: 448.64/700.0 = 64.1% done in 16.0s, 9.0s to go
+on time step 22434 (time=448.68), 0.00071699 s/step
+Meep progress: 561.28/700.0 = 80.2% done in 20.0s, 4.9s to go
+on time step 28066 (time=561.32), 0.000710342 s/step
+Meep progress: 673.74/700.0 = 96.2% done in 24.0s, 0.9s to go
+on time step 33690 (time=673.8), 0.000711244 s/step
+run 0 finished at t = 700.0 (35000 timesteps)
+  A/A_avg 1.50  T = 0.5589
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000174999 s
+Working in 2D dimensions.
+Computational cell is 38 x 10 x 0 with resolution 25
+     block, center = (-7,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.194601 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 145.54/700.0 = 20.8% done in 4.0s, 15.2s to go
+on time step 7277 (time=145.54), 0.000549702 s/step
+Meep progress: 290.64/700.0 = 41.5% done in 8.0s, 11.3s to go
+on time step 14534 (time=290.68), 0.000551256 s/step
+Meep progress: 438.2/700.0 = 62.6% done in 12.0s, 7.2s to go
+on time step 21912 (time=438.24), 0.000542172 s/step
+Meep progress: 584.28/700.0 = 83.5% done in 16.0s, 3.2s to go
+on time step 29215 (time=584.3), 0.000547734 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 700.0 (35000 timesteps)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000164986 s
+Working in 2D dimensions.
+Computational cell is 38.28 x 10 x 0 with resolution 25
+     block, center = (-7.15,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.15,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.197535 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 121.16/700.0 = 17.3% done in 4.0s, 19.1s to go
+on time step 6058 (time=121.16), 0.000660333 s/step
+Meep progress: 242.64000000000001/700.0 = 34.7% done in 8.0s, 15.1s to go
+on time step 12132 (time=242.64), 0.000658607 s/step
+Meep progress: 363.6/700.0 = 51.9% done in 12.0s, 11.1s to go
+on time step 18181 (time=363.62), 0.000661286 s/step
+Meep progress: 482.68/700.0 = 69.0% done in 16.0s, 7.2s to go
+on time step 24136 (time=482.72), 0.000671808 s/step
+Meep progress: 603.88/700.0 = 86.3% done in 20.0s, 3.2s to go
+on time step 30197 (time=603.94), 0.000660036 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 700.0 (35000 timesteps)
+  A/A_avg 2.00  T = 0.4987
+  knee: T(avg)=0.6511, +20% intensity -> T x0.92, dT/dI|avg (norm) = -0.30
+== E3 pulse discrimination vs beam strength
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.00018692 s
+Working in 2D dimensions.
+Computational cell is 38.28 x 10 x 0 with resolution 25
+     block, center = (-7.15,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.15,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.19734 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 119.24000000000001/800.0 = 14.9% done in 4.0s, 22.8s to go
+on time step 5962 (time=119.24), 0.00067094 s/step
+Meep progress: 238.92000000000002/800.0 = 29.9% done in 8.0s, 18.8s to go
+on time step 11946 (time=238.92), 0.000668471 s/step
+Meep progress: 358.96/800.0 = 44.9% done in 12.0s, 14.7s to go
+on time step 17950 (time=359), 0.000666319 s/step
+Meep progress: 479.52/800.0 = 59.9% done in 16.0s, 10.7s to go
+on time step 23978 (time=479.56), 0.000663627 s/step
+Meep progress: 599.02/800.0 = 74.9% done in 20.0s, 6.7s to go
+on time step 29953 (time=599.06), 0.000669506 s/step
+Meep progress: 718.84/800.0 = 89.9% done in 24.0s, 2.7s to go
+on time step 35944 (time=718.88), 0.000667731 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 800.0 (40000 timesteps)
+  drive 0.7: contrast in 1.690 -> out 1.678 (discrimination x0.993)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000171185 s
+Working in 2D dimensions.
+Computational cell is 38.28 x 10 x 0 with resolution 25
+     block, center = (-7.15,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.15,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.196473 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 118.94/800.0 = 14.9% done in 4.0s, 22.9s to go
+on time step 5947 (time=118.94), 0.000672617 s/step
+Meep progress: 236.38/800.0 = 29.5% done in 8.0s, 19.1s to go
+on time step 11820 (time=236.4), 0.000681162 s/step
+Meep progress: 355.0/800.0 = 44.4% done in 12.0s, 15.0s to go
+on time step 17751 (time=355.02), 0.000674482 s/step
+Meep progress: 473.32/800.0 = 59.2% done in 16.0s, 11.0s to go
+on time step 23669 (time=473.38), 0.000675999 s/step
+Meep progress: 589.22/800.0 = 73.7% done in 20.0s, 7.2s to go
+on time step 29464 (time=589.28), 0.000690311 s/step
+Meep progress: 708.08/800.0 = 88.5% done in 24.0s, 3.1s to go
+on time step 35408 (time=708.16), 0.000673045 s/step
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+run 0 finished at t = 800.0 (40000 timesteps)
+  drive 1.0: contrast in 1.690 -> out 2.101 (discrimination x1.243)
+-----------
+Initializing structure...
+time for choose_chunkdivision = 0.000165939 s
+Working in 2D dimensions.
+Computational cell is 38.28 x 10 x 0 with resolution 25
+     block, center = (-7.15,0,0)
+          size (16,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+     block, center = (10.15,0,0)
+          size (18,0.991,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08521,2.08521,2.08521)
+time for set_epsilon = 0.196813 s
+-----------
+MPB solved for frequency_1(0.645161,0,0) = 0.645161 after 14 iters
+Meep progress: 107.74000000000001/800.0 = 13.5% done in 4.0s, 25.7s to go
+on time step 5387 (time=107.74), 0.000742667 s/step
+Meep progress: 218.14000000000001/800.0 = 27.3% done in 8.0s, 21.3s to go
+on time step 10907 (time=218.14), 0.00072473 s/step
+Meep progress: 329.52/800.0 = 41.2% done in 12.0s, 17.1s to go
+on time step 16477 (time=329.54), 0.000718294 s/step
+Meep progress: 441.7/800.0 = 55.2% done in 16.0s, 13.0s to go
+on time step 22087 (time=441.74), 0.000713101 s/step
+Meep progress: 553.2/800.0 = 69.2% done in 20.0s, 8.9s to go
+on time step 27663 (time=553.26), 0.00071739 s/step
+Meep progress: 663.5600000000001/800.0 = 82.9% done in 24.0s, 4.9s to go
+on time step 33181 (time=663.62), 0.000724967 s/step
+Meep progress: 775.76/800.0 = 97.0% done in 28.0s, 0.9s to go
+on time step 38792 (time=775.84), 0.000712976 s/step
+run 0 finished at t = 800.0 (40000 timesteps)
+  drive 1.4: contrast in 1.690 -> out 1.738 (discrimination x1.028)
+wrote fig/ftir_gate_knee.png fig/ftir_gate_pulse.png
+
+Elapsed run time = 467.9138 s
