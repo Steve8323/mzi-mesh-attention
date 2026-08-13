@@ -61,3 +61,15 @@ topology decisions follow, all documented in the generator:
   their own element, and two corridor pinches — all fixed by
   construction changes, none by relaxing the rules (except the two
   explicit whitelists above).
+
+## Bias-only variant (electrode_mask_bias.py) — user-specified
+
+All conductors are SINGLE-ENDED static biases referenced to the Si
+substrate (one edge contact over an oxide via). No currents anywhere,
+no pairs: 3 nets total (RING_BIAS arc, GATE_BIAS strip, SUB contact).
+Mesh phase correction moves to a one-time permanent UV/laser trim
+(optical write, no electrode); without that step the mesh runs
+geometric-only at ~4 bits (N=5) instead of 5.8. Release-map requirement:
+keep Si beneath the RING_BIAS arc and GATE_BIAS strip (suspended regions
+have no counter-electrode below). Verify: PASS (min net clearance
+10.8 µm, min guide clearance 1.0 µm) — out/electrode_bias_verify.json.

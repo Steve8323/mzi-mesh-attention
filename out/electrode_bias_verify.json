@@ -1,0 +1,14 @@
+{
+ "pairs": {
+  "GATE_BIAS|RING_BIAS": 10.78,
+  "GATE_BIAS|SUB": 334.51,
+  "RING_BIAS|SUB": 303.8
+ },
+ "wg": {
+  "GATE_BIAS": 1.0,
+  "RING_BIAS": 1.0,
+  "SUB": 65.5
+ },
+ "pass": true,
+ "note": "bias-only: all conductors single-ended vs substrate; no currents; mesh trim = permanent UV/laser write (no artwork); release map must keep Si under RING_BIAS arc and GATE_BIAS strip"
+}
